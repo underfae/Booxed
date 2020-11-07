@@ -1,0 +1,75 @@
+@import '../../../variables.scss';
+@import '../../../colors.scss';
+
+:host{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+
+  p{
+    color: $primary-color;
+    margin-top: $margin-regular;
+    margin-bottom: 0;
+    font-size: $fs-small;
+    font-weight: $fw-bold;
+  }
+
+  img{
+    width: 150px;
+    margin-top: $margin-medium;
+    margin-left: $margin-medium;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: $margin-regular auto 0 auto;
+
+    .name-surname{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      mat-form-field{
+        width: 45%;
+      }
+    }
+
+    i{
+      position: absolute;
+      right: $margin-small;
+      color: $secondary-color;
+      cursor: pointer;
+    }
+
+    mat-checkbox{
+      display: flex;
+      margin-bottom: $margin-default;
+      color: $secondary-color;
+    }
+
+    button{
+      margin: $margin-regular auto $margin-small auto ;
+      width: 150px;
+    }
+  }
+
+  .server-errors{
+    color: red;
+    margin-bottom: $margin-small;
+    font-size: $fs-small;
+  }
+
+  a{
+    color: $primary-color;
+    font-size: $fs-small;
+    cursor: pointer;
+
+    &.terms-info{
+      margin-top: $margin-default;
+    }
+  }
+}

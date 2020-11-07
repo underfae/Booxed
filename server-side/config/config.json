@@ -1,0 +1,10 @@
+{
+    "dev":{
+        "DB_URL" : "mongodb://localhost:27017/booxed",
+        "PORT" : 3000
+    },
+    "prod":{
+        "DB_URL" : "mongodb://......./booxed",
+        "PORT" : 80
+    }
+}
