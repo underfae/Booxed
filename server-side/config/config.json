@@ -1,10 +1,14 @@
 {
-    "dev":{
-        "DB_URL" : "mongodb://localhost:27017/booxed",
-        "PORT" : 3000
-    },
-    "prod":{
-        "DB_URL" : "mongodb://......./booxed",
-        "PORT" : 80
-    }
+  "dev": {
+    "DB_URL": "mongodb://localhost:27017/booxed",
+    "PORT": 3000,
+    "JWT_SECRET": "BOOXED#2303",
+    "JWT_EXPIRATION_TIME": "5m"
+  },
+  "prod": {
+    "DB_URL": "mongodb://......./booxed",
+    "PORT": 80,
+    "JWT_SECRET": "BOOXED#2303",
+    "JWT_EXPIRATION_TIME": "5m"
+  }
 }
