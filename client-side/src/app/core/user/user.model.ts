@@ -8,3 +8,8 @@ export class User {
   liked: number;
   read: number;
 }
+
+export class LoggedUser {
+  username: string;
+  password: string;
+}

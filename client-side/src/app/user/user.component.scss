@@ -1,15 +1,17 @@
-:host{
+:host {
   display: flex;
   flex-direction: row;
   min-height: 100%;
 
-  .left-side{
+  .left-side {
     width: 45%;
-    background-image: url('../../assets/login.png');
+    background-image: url('../../assets/img/login.png');
     background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  .right-side{
+  .right-side {
     width: 55%;
   }
 }

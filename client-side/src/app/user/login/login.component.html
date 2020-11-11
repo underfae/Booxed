@@ -1,0 +1,24 @@
+<img src="../../../assets/img/logo-blue.png"/>
+<form [formGroup]="loggedUser" (ngSubmit)="login()">
+  <p>Welcome back! Please log in to your account</p>
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput type="text" formControlName="username" required/>
+    <mat-error *ngIf="loggedUser.get('username').hasError('required')"
+    >Username is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" required/>
+
+    <mat-error *ngIf="loggedUser.get('password').hasError('required')"
+    >Password is required!
+    </mat-error>
+  </mat-form-field>
+  <div class="buttons">
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loggedUser.valid">Login</button>
+    <a mat-raised-button routerLink="/register"> Sign in </a>
+  </div>
+</form>
+<a class="terms-info"> Terms of use. Privacy policy</a>

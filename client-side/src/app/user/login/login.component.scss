@@ -22,37 +22,24 @@
 
     p {
       color: $primary-color;
-      margin-bottom: $margin-large;
+      margin-bottom: $margin-large-xl;
       font-size: $fs-default;
       font-weight: $fw-bold;
     }
 
-    .name-surname {
+    mat-form-field {
+      margin-bottom: $margin-default;
+    }
+
+    .buttons {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      margin-top: $margin-regular;
 
-      mat-form-field {
-        width: 45%;
+      button, a {
+        margin: $margin-regular auto $margin-small auto;
+        width: 150px;
       }
-    }
-
-    i {
-      position: absolute;
-      right: $margin-small;
-      color: $secondary-color;
-      cursor: pointer;
-    }
-
-    mat-checkbox {
-      display: flex;
-      margin-bottom: $margin-default;
-      color: $secondary-color;
-    }
-
-    button {
-      margin: $margin-regular auto $margin-small auto;
-      width: 150px;
     }
   }
 
@@ -68,7 +55,7 @@
     cursor: pointer;
 
     &.terms-info {
-      margin: $margin-default 0;
+      margin-bottom: $margin-default;
     }
   }
 }

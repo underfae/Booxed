@@ -1,0 +1,17 @@
+<nav>
+  <img src="../../assets/img/logo-white.png">
+  <ul class="list">
+    <li><i class="fas fa-home"></i>DASHBOARD</li>
+    <li><i class="fas fa-book-open"></i>BOOKSHELVES</li>
+    <li><i class="fas fa-search"></i>SEARCH</li>
+    <li><i class="fas fa-trophy"></i>POINTS</li>
+    <li><i class="fas fa-thumbs-up"></i> LIKED</li>
+    <div class="separator"></div>
+    <li class="logout" (click)="logout()"><i class="fas fa-sign-out-alt"></i> LOG OUT</li>
+  </ul>
+</nav>
+<mat-card>
+  <router-outlet></router-outlet>
+</mat-card>
+
+
