@@ -1,5 +1,5 @@
-<img src="../../../assets/img/logo-blue.png"/>
 <form [formGroup]="userRegistered" (ngSubmit)="register()">
+  <img src="../../../assets/img/booxed.png"/>
   <p>Fill this form to create an account</p>
   <div class="name-surname">
     <mat-form-field>
@@ -67,7 +67,7 @@
   >
   <button
     mat-raised-button
-    color="primary"
+    color="accent"
     type="submit"
     [disabled]="!userRegistered.valid || !terms.checked"
   >

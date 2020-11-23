@@ -1,10 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import './variables.scss';
 
-html, body { height: 100%; font-size: $fs-default;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  font-size: $fs-default;
+}
 
-mat-form-field, mat-checkbox{
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-form-field, mat-checkbox {
   font-size: $fs-default;
 }
 

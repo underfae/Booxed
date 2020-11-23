@@ -1,0 +1,101 @@
+@import "../../variables.scss";
+@import "../../colors.scss";
+
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: $primary-color;
+    margin: $margin-regular;
+    font-size: $fs-large;
+  }
+
+  h2 {
+    margin-top: $margin-regular;
+    margin-left: $margin-regular;
+    color: $secondary-color;
+  }
+
+  .overview {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .element {
+      display: flex;
+      flex-direction: row;
+      margin: 0 $margin-regular;
+      align-items: center;
+      width: 33.3%;
+      justify-content: center;
+
+      .label {
+        font-size: $fs-medium;
+        margin-right: $margin-regular;
+
+      }
+
+      .circle {
+        font-size: $fs-regular;
+        font-weight: $fw-bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary-color;
+        margin: $margin-default 0 ;
+      }
+    }
+  }
+
+  .middle-div {
+    border: 4px solid;
+    border-radius: 30px;
+    border-image: linear-gradient(to right top, #3fc1c0, #00a5bb, #0089b1, #006ca1, #1d4e89) 1 ;
+    width: 90%;
+    margin: $margin-large auto $margin-default auto;
+    display: flex;
+    flex-direction: row;
+    padding: $margin-regular $margin-large;
+
+    .info {
+      width: 40%;
+      text-align: center;
+      h2 {
+        color: $secondary-color;
+        margin-top: 0;
+        font-size: $fs-medium;
+      }
+
+      img {
+        margin-top: $margin-medium;
+      }
+    }
+
+    .buttons {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      margin: auto 0;
+
+      button {
+        width: 33.3%;
+        margin-bottom: $margin-default;
+        border-radius: 30px;
+        padding: $margin-small;
+        color: $primary-color;
+        opacity: 0.9;
+      }
+
+      .bookshelves {
+        align-self: center;
+      }
+
+      .find {
+        align-self: flex-end;
+      }
+    }
+  }
+}

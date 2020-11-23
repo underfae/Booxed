@@ -8,11 +8,6 @@
   margin: auto;
   text-align: center;
 
-  img {
-    width: 150px;
-    margin-top: $margin-medium;
-    margin-left: $margin-medium;
-  }
 
   form {
     display: flex;
@@ -20,6 +15,10 @@
     width: 50%;
     margin: auto;
 
+    img {
+      width: 150px;
+      margin: 0 auto $margin-large-xl auto;
+    }
     p {
       color: $primary-color;
       margin-bottom: $margin-large;

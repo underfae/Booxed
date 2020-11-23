@@ -1,5 +1,5 @@
-<img src="../../../assets/img/logo-blue.png"/>
 <form [formGroup]="loggedUser" (ngSubmit)="login()">
+  <img src="../../../assets/img/booxed.png"/>
   <p>Welcome back! Please log in to your account</p>
   <mat-form-field>
     <mat-label>Username</mat-label>
@@ -17,8 +17,8 @@
     </mat-error>
   </mat-form-field>
   <div class="buttons">
-    <button mat-raised-button color="primary" type="submit" [disabled]="!loggedUser.valid">Login</button>
-    <a mat-raised-button routerLink="/register"> Sign in </a>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loggedUser.valid">Log in!</button>
+    <a mat-raised-button routerLink="/register"> Sign up! </a>
   </div>
 </form>
 <a class="terms-info"> Terms of use. Privacy policy</a>

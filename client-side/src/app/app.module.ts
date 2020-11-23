@@ -1,15 +1,16 @@
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from "@angular/material/list";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -21,6 +22,8 @@ import {MainpageComponent} from './mainpage/mainpage.component';
 import {RegisterComponent} from './user/register/register.component';
 import {UserComponent} from './user/user.component';
 import {UserService} from './core/user/user.service';
+import {BookshelvesComponent} from './bookshelves/bookshelves.component';
+import {CreateBookshelfDialogComponent} from './shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +32,20 @@ import {UserService} from './core/user/user.service';
     LoginComponent,
     MainpageComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    BookshelvesComponent,
+    CreateBookshelfDialogComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
+    MatDialogModule,
     MatInputModule,
     MatListModule,
     MatSnackBarModule,
