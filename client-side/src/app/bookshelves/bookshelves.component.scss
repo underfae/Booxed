@@ -1,0 +1,82 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    h1{
+      letter-spacing: 1px;
+      font-weight: 500;
+      margin: 0;
+    }
+    button {
+      height: fit-content;
+    }
+  }
+
+  .bookshelves {
+    width: 80%;
+    height: 85%;
+    overflow: auto;
+    margin: auto;
+
+    .mat-card {
+      display: flex;
+      flex-direction: row;
+      margin: 24px 0;
+      cursor: pointer;
+      img {
+        margin-right: 24px;
+        width: 25%
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        margin-right: 24px;
+        .description{
+          color: #686767;
+        }
+      }
+
+      .info-actions {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: right;
+        .books{
+          p{
+            font-weight: 500;
+          }
+        }
+
+        i {
+          margin-left: 8px;
+
+        }
+      }
+    }
+  }
+  .no-items-found{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 89px;
+    i{
+      color: #FF4081;
+      margin-bottom: 24px;
+    }
+    h2{
+      color: #686767;
+    }
+  }
+}

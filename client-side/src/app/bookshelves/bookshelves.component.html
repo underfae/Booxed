@@ -1,0 +1,34 @@
+<div class="header">
+  <h1>BOOKSHELVES</h1>
+  <button mat-raised-button color="accent" (click)="openDialog()">ADD NEW BOOKSHELF</button>
+</div>
+<div class="bookshelves">
+  <ng-container *ngIf="bookshelves.length !== 0">
+    <div *ngFor="let i of bookshelves">
+      <div class="mat-card">
+        <img src="./assets/img/books.png">
+        <div class="info">
+          <h1 class="name"> FAVOURITES</h1>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+            ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="info-actions">
+          <div class="books">
+            <label>BOOKS</label>
+            <p> 45</p>
+          </div>
+          <button mat-button color="accent" class="delete">
+            DELETE BOOKSHELF <i class="far fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="bookshelves.length === 0">
+    <div class="no-items-found">
+      <i class="fas fa-exclamation-triangle fa-10x"></i>
+      <h2> You don't have any bookshelves. It's time to change that! :) </h2>
+    </div>
+  </ng-container>
+</div>
