@@ -1,0 +1,26 @@
+mat-expansion-panel{
+  margin-bottom: 24px;
+}
+
+mat-expansion-panel-header{
+  display: flex;
+  flex-direction: row;
+  padding: 8px 24px;
+}
+
+.mat-expansion-panel-body {
+  padding: 16px 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+mat-dialog-content{
+  padding: 8px 24px;
+  height: 90%;
+  overflow-y: auto;
+}
