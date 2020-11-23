@@ -9,9 +9,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from "@angular/material/list";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from "@angular/material/table";
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {NgModule} from '@angular/core';
 
+import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {AuthenticationGuard} from "./user/auth/authentication.guard";
@@ -24,6 +25,7 @@ import {UserComponent} from './user/user.component';
 import {UserService} from './core/user/user.service';
 import {BookshelvesComponent} from './bookshelves/bookshelves.component';
 import {CreateBookshelfDialogComponent} from './shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component';
+import { PointsComponent } from './points/points.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {CreateBookshelfDialogComponent} from './shared/components/create-bookshe
     RegisterComponent,
     UserComponent,
     BookshelvesComponent,
-    CreateBookshelfDialogComponent
+    CreateBookshelfDialogComponent,
+    PointsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -49,6 +52,7 @@ import {CreateBookshelfDialogComponent} from './shared/components/create-bookshe
     MatInputModule,
     MatListModule,
     MatSnackBarModule,
+    MatTableModule,
     MatTooltipModule,
     ReactiveFormsModule
   ],

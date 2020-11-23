@@ -8,6 +8,7 @@ import {MainpageComponent} from './mainpage/mainpage.component';
 import {RegisterComponent} from './user/register/register.component';
 import {BookshelvesComponent} from './bookshelves/bookshelves.component'
 import {UserComponent} from './user/user.component';
+import {PointsComponent} from "./points/points.component";
 
 const routes: Routes = [
   {
@@ -29,7 +30,8 @@ const routes: Routes = [
     path: 'mainPage', component: MainpageComponent, canActivate: [AuthenticationGuard],
     children: [
       {path: '', component: DashboardComponent},
-      {path: 'bookshelves', component: BookshelvesComponent}
+      {path: 'bookshelves', component: BookshelvesComponent},
+      {path: 'points', component: PointsComponent}
     ]
   }
 ];

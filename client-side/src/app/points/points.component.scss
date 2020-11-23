@@ -1,0 +1,112 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px 24px 24px;
+  height: 100%;
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30%;
+    margin-bottom: 24px;
+    .get {
+      width: 100%;
+      color: #686767;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2{
+        font-weight: 500;
+        font-size: 24px;
+      }
+    }
+
+    .points {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .outside-circle {
+        border: 4px solid #FF4081;
+        display: flex;
+        border-radius: 105px;
+        width: 200px;
+        justify-content: center;
+        height: 200px;
+        align-items: center;
+        .inside-circle{
+          border: 4px dashed #FF4081;
+          display: flex;
+          border-radius: 90px;
+          width: 170px;
+          justify-content: center;
+          height: 170px;
+          align-items: center;
+          .user-points{
+            display: flex;
+            flex-direction: column;
+            margin-top: 24px;
+            .pts{
+              font-size: 50px;
+              color: #FF4081;
+              font-weight: 500;
+            }
+            .label{
+              font-size: 24px;
+              font-weight: 500;
+              margin-top: 8px;
+              text-align: center;
+              color: #686767;
+            }
+          }
+        }
+      }
+    }
+    .collect {
+      width: 100%;
+      color: #686767;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2{
+        font-weight: 500;
+        font-size: 24px;
+      }
+      button{
+        width: 40%;
+        margin-top: 8px
+      }
+    }
+  }
+
+  .rewards{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .example-container{
+      max-height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      table{
+        width: 130%;
+      }
+    }
+  }
+
+  .no-items-found{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 89px;
+    i{
+      color: #FF4081;
+      margin-bottom: 24px;
+    }
+    h2{
+      color: #686767;
+    }
+  }
+}
