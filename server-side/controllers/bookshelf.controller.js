@@ -11,9 +11,9 @@ module.exports.addBookshelf = (req, res) => {
     bookshelf.books_amount = req.body.books_amount
     bookshelf.save((error, result) => {
         if (error) {
-            res.status(404).send(error.errors)
+            res.status(400).send(error.errors)
         } else {
-            res.status(200).send(result)
+            res.status(200).send('Bookshelf successfully added')
         }
     })
 }
@@ -21,7 +21,7 @@ module.exports.addBookshelf = (req, res) => {
 module.exports.deleteBookshelf = (req, res) => {
     const id = req.params.id
     if (!ObjectId.isValid(id))
-        return res.status(400).send('There is no record with given id')
+        return res.status(404).json({status: false, message:'There is no bookshelf with given id'})
     else {
         Bookshelf.findOneAndRemove({_id: id}, function (error, post) {
             if (error) {
@@ -35,7 +35,7 @@ module.exports.deleteBookshelf = (req, res) => {
 module.exports.getBookshelf = (req, res) => {
     const id = req.params.id
     if (!ObjectId.isValid(id))
-        return res.status(400).send('There is no record with given id.')
+        return res.status(404).json({status: false, message:'There is no record with given id.'})
     else {
         Bookshelf.findById({_id: id}, function (error, post) {
             if (error) {
