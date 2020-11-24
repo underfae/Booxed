@@ -1,23 +1,23 @@
-<h1> Welcome back Gabrysia!</h1>
+<h1> Welcome back {{user?.name}} ! </h1>
 <h2> Overview </h2>
 
 <div class="overview">
   <div class="element">
-    <div class="label"> <i class="fas fa-thumbs-up"> </i> Liked Books</div>
+    <div class="label"> Liked Books</div>
     <div class="circle">
-      3
+      {{user?.liked}}
     </div>
   </div>
   <div class="element">
     <div class="label"> Points</div>
     <div class="circle">
-      4568
+      {{user?.points}}
     </div>
   </div>
   <div class="element">
     <div class="label"> Books you've read</div>
     <div class="circle">
-      3
+      {{user?.read}}
     </div>
   </div>
 </div>
@@ -28,9 +28,9 @@
       <img src="../../assets/img/books.png">
     </div>
     <div class="buttons">
-      <button mat-raised-button>Create new bookshelf</button>
-      <button mat-raised-button class="bookshelves">Your bookshelves</button>
-      <button mat-raised-button class="find">Find a book</button>
+      <button mat-raised-button (click)="openDialog()">Create new bookshelf</button>
+      <button mat-raised-button  [routerLink]="['/mainPage/bookshelves']" class="bookshelves">Your bookshelves</button>
+      <button mat-raised-button  [routerLink]="['/mainPage/search']" class="find">Find a book</button>
     </div>
   </div>
   <div class="random-books">
