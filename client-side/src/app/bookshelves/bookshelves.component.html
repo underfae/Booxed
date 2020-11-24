@@ -4,21 +4,19 @@
 </div>
 <div class="bookshelves">
   <ng-container *ngIf="bookshelves.length !== 0">
-    <div *ngFor="let i of bookshelves">
+    <div *ngFor="let item of bookshelves">
       <div class="mat-card">
         <img src="./assets/img/books.png">
         <div class="info">
-          <h1 class="name"> FAVOURITES</h1>
-          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt
-            ut labore et dolore magna aliqua.</p>
+          <h1 class="name"> {{item.name.toUpperCase()}}</h1>
+          <p class="description">{{item.description}}</p>
         </div>
         <div class="info-actions">
           <div class="books">
             <label>BOOKS</label>
-            <p> 45</p>
+            <p> {{item.books_amount}}</p>
           </div>
-          <button mat-button color="accent" class="delete">
+          <button mat-button color="accent" class="delete" (click)="deleteBookshelf(item._id)">
             DELETE BOOKSHELF <i class="far fa-trash-alt"></i>
           </button>
         </div>
@@ -26,9 +24,8 @@
     </div>
   </ng-container>
   <ng-container *ngIf="bookshelves.length === 0">
-    <div class="no-items-found">
-      <i class="fas fa-exclamation-triangle fa-10x"></i>
-      <h2> You don't have any bookshelves. It's time to change that! :) </h2>
-    </div>
+    <app-no-items-found text="You don't have any bookshelves.
+    It's time to change that! :)">
+    </app-no-items-found>
   </ng-container>
 </div>

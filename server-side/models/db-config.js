@@ -1,5 +1,5 @@
 require('./user.model')
-
+require('./bookshelf.model')
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.DB_URL,  { 
