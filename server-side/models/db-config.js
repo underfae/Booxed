@@ -1,5 +1,8 @@
 require('./user.model')
 require('./bookshelf.model')
+require('./library.model')
+require('./order.model')
+require('./reward.model')
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.DB_URL,  { 
