@@ -1,0 +1,12 @@
+<div class="search-field">
+  <form [formGroup]="search" (ngSubmit)="searchBooks()">
+    <mat-form-field appearance="legacy">
+      <input matInput type="text" placeholder="Search by book title or author name" formControlName="book">
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Search</button>
+  </form>
+</div>
+
+<div class="search-result">
+
+</div>

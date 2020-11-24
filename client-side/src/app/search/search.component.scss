@@ -1,0 +1,15 @@
+.search-field{
+  form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mat-form-field{
+      width: 50%;
+      margin-right: 24px;
+    }
+    button{
+      height: fit-content;
+    }
+  }
+}
