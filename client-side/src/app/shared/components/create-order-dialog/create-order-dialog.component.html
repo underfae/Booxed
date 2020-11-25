@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>ORDERING {{data.reward.name.toUpperCase()}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="form">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" [(ngModel)]="newOrder.name" required/>
+      <mat-error *ngIf="!newOrder.name">Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Surname</mat-label>
+      <input matInput type="text" [(ngModel)]="newOrder.surname" required/>
+      <mat-error *ngIf="!newOrder.surname">Surname is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" [(ngModel)]="newOrder.email" required email/>
+      <mat-error *ngIf="!newOrder.email">E-mail is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input matInput type="date" [(ngModel)]="newOrder.dateOfPickup" required/>
+      <mat-error *ngIf="!newOrder.dateOfPickup">Date is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose a library</mat-label>
+      <mat-select [(ngModel)]="newOrder.id_library">
+        <ng-container *ngFor="let lib of data.reward.libraries">
+          <mat-option value="{{lib}}">{{getLibraryName(lib)}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="separator"></div>
+  <div *ngIf="newOrder.id_library " class="library-info">
+    <app-readonly-field content="{{getLibraryName(newOrder.id_library)}}" label="Library"></app-readonly-field>
+    <app-readonly-field content="{{getLibraryAddress(newOrder.id_library)}}"
+                        label="Address"></app-readonly-field>
+    <app-readonly-field content="{{getLibraryTelephone(newOrder.id_library)}}" label="Telephone"></app-readonly-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="accent"  [mat-dialog-close]="newOrder">Save
+  </button>
+</mat-dialog-actions>

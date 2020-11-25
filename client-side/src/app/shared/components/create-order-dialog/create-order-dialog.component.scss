@@ -1,0 +1,36 @@
+@import "src/variables";
+@import "src/colors";
+
+h2 {
+  color: $primary-color;
+  margin-bottom: $margin-large;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .separator {
+    width: 10%;
+  }
+
+  .library-info {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    app-readonly-field {
+      margin-bottom: $margin-regular;
+    }
+  }
+}
+
+
