@@ -8,7 +8,8 @@ import {MainpageComponent} from './mainpage/mainpage.component';
 import {RegisterComponent} from './user/register/register.component';
 import {BookshelvesComponent} from './bookshelves/bookshelves.component'
 import {UserComponent} from './user/user.component';
-import {PointsComponent} from "./points/points.component";
+import {PointsComponent} from './points/points.component';
+import {SearchComponent} from './search/search.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,8 @@ const routes: Routes = [
     children: [
       {path: '', component: DashboardComponent},
       {path: 'bookshelves', component: BookshelvesComponent},
-      {path: 'points', component: PointsComponent}
+      {path: 'points', component: PointsComponent},
+      {path: 'search', component: SearchComponent}
     ]
   }
 ];

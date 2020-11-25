@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from "@angular/material/list";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -26,6 +27,13 @@ import {UserService} from './core/user/user.service';
 import {BookshelvesComponent} from './bookshelves/bookshelves.component';
 import {CreateBookshelfDialogComponent} from './shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component';
 import { PointsComponent } from './points/points.component';
+import { OrdersDialogComponent } from './shared/components/orders-dialog/orders-dialog.component';
+import { ReadonlyFieldComponent } from './shared/components/readonly-field/readonly-field.component';
+import { CreateOrderDialogComponent } from './shared/components/create-order-dialog/create-order-dialog.component';
+import { NoItemsFoundComponent } from './shared/components/no-items-found/no-items-found.component';
+import { SearchComponent } from './search/search.component';
+import { BookPreviewComponent } from './shared/components/book-preview/book-preview.component';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -37,7 +45,13 @@ import { PointsComponent } from './points/points.component';
     UserComponent,
     BookshelvesComponent,
     CreateBookshelfDialogComponent,
-    PointsComponent
+    PointsComponent,
+    OrdersDialogComponent,
+    ReadonlyFieldComponent,
+    CreateOrderDialogComponent,
+    NoItemsFoundComponent,
+    SearchComponent,
+    BookPreviewComponent
   ],
   imports: [
     AppRoutingModule,
@@ -49,12 +63,14 @@ import { PointsComponent } from './points/points.component';
     MatCardModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatExpansionModule,
     MatInputModule,
     MatListModule,
     MatSnackBarModule,
     MatTableModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
