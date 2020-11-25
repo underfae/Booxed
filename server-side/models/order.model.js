@@ -23,6 +23,9 @@ const orderSchema = new mongoose.Schema({
     },
     id_user: {
         type: ObjectId
+    },
+    status: {
+        type: String
     }
 })
 
