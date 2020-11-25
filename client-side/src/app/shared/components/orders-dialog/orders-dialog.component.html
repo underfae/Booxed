@@ -1,24 +1,33 @@
 <h2 mat-dialog-title>YOUR ORDERS</h2>
 <mat-dialog-content class="mat-typography">
-  <ng-container *ngFor="let el of orders">
-    <mat-accordion>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <div class="content">
-            <app-readonly-field content='Random book' label='Reward'></app-readonly-field>
-            <app-readonly-field content='24 December 2020' label='Date of pickup'></app-readonly-field>
-            <app-readonly-field content='Waiting for pickup' label='Status'></app-readonly-field>
+  <div *ngIf="data.orders.length!==0">
+    <div *ngFor="let el of data.orders">
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <div class="content">
+              <app-readonly-field content="{{getRewardName(el.id_reward)}}" label='Reward'></app-readonly-field>
+              <app-readonly-field content="{{el.dateOfPickup | date:'shortDate'}}"
+                                  label='Date of pickup'></app-readonly-field>
+              <app-readonly-field content='{{el.status}}' label='Status'></app-readonly-field>
+            </div>
+          </mat-expansion-panel-header>
+          <div class="additional-content">
+            <app-readonly-field content='{{el.name}}' label='Name'></app-readonly-field>
+            <app-readonly-field content='{{el.surname}}' label='Surname'></app-readonly-field>
+            <app-readonly-field content='{{getLibraryName(el.id_library)}}' label='Library'></app-readonly-field>
+            <app-readonly-field content='{{getLibraryAddress(el.id_library)}}' label='Address'></app-readonly-field>
           </div>
-        </mat-expansion-panel-header>
-        <div class="content">
-          <app-readonly-field content='Gabriela' label='Name'></app-readonly-field>
-          <app-readonly-field content='Frączek' label='Surname'></app-readonly-field>
-          <app-readonly-field content='Biblioteka nr 1 w Krakowie' label='Library'></app-readonly-field>
-          <app-readonly-field content='ul.Popiełuszki 12/34 Kraków' label='Address'></app-readonly-field>
-        </div>
-      </mat-expansion-panel>
-    </mat-accordion>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+  <ng-container *ngIf="data.orders.length===0">
+    <app-no-items-found text="You don't have any orders yet :(">
+    </app-no-items-found>
   </ng-container>
+
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Close</button>
