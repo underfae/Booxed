@@ -1,7 +1,10 @@
+@import "src/colors";
+@import "src/variables";
+
 :host {
   display: flex;
   flex-direction: column;
-  padding: 40px 24px 24px 24px;
+  padding: $margin-large $margin-regular $margin-regular $margin-regular;
   height: 100%;
 
   .info {
@@ -9,16 +12,18 @@
     flex-direction: row;
     justify-content: space-evenly;
     height: 30%;
-    margin-bottom: 24px;
+    margin-bottom: $margin-regular;
+
     .get {
       width: 100%;
-      color: #686767;
+      color: $secondary-color;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      h2{
-        font-weight: 500;
-        font-size: 24px;
+
+      h2 {
+        font-weight: $fw-bold;
+        font-size: $margin-regular;
       }
     }
 
@@ -29,84 +34,82 @@
       align-items: center;
 
       .outside-circle {
-        border: 4px solid #FF4081;
+        border: 4px solid $primary-color;
         display: flex;
         border-radius: 105px;
         width: 200px;
-        justify-content: center;
         height: 200px;
+        justify-content: center;
         align-items: center;
-        .inside-circle{
-          border: 4px dashed #FF4081;
+
+        .inside-circle {
+          border: 4px dashed $primary-color;
           display: flex;
           border-radius: 90px;
           width: 170px;
-          justify-content: center;
           height: 170px;
+          justify-content: center;
           align-items: center;
-          .user-points{
+
+          .user-points {
             display: flex;
             flex-direction: column;
-            margin-top: 24px;
-            .pts{
-              font-size: 50px;
-              color: #FF4081;
-              font-weight: 500;
-            }
-            .label{
-              font-size: 24px;
-              font-weight: 500;
-              margin-top: 8px;
+            margin-top: $margin-regular;
+
+            .pts {
+              font-size: $fs-xl-large;
+              color: $primary-color;
+              font-weight: $fw-bold;
               text-align: center;
-              color: #686767;
+            }
+
+            .label {
+              font-size: $margin-regular;
+              font-weight: $fw-bold;
+              margin-top: $margin-small;
+              text-align: center;
+              color: $secondary-color;
             }
           }
         }
       }
     }
+
     .collect {
       width: 100%;
-      color: #686767;
+      color: $secondary-color;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      h2{
-        font-weight: 500;
-        font-size: 24px;
+
+      h2 {
+        font-weight: $fw-bold;
+        font-size: $margin-regular;
       }
-      button{
+
+      button {
         width: 40%;
-        margin-top: 8px
+        margin-top: $margin-small
       }
     }
   }
 
-  .rewards{
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .example-container{
-      max-height: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-      table{
-        width: 130%;
-      }
-    }
-  }
+  .list-of-rewards {
+    height: 65%;
+    overflow-y: auto;
 
-  .no-items-found{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 89px;
-    i{
-      color: #FF4081;
-      margin-bottom: 24px;
-    }
-    h2{
-      color: #686767;
+    mat-card {
+      width: 80%;
+      margin: auto auto $margin-small auto;
+      display: flex;
+      flex-direction: row;
+      app-readonly-field{
+        width: 25%;
+      }
+      .button{
+        width: 25%;
+        text-align: right;
+      }
     }
   }
 }
