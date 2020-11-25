@@ -8,7 +8,7 @@ import {LibraryService} from "../core/points/library/library.service";
 import {Order} from "../core/points/order/order.model";
 import {OrderService} from "../core/points/order/order.service";
 import {OrdersDialogComponent} from "../shared/components/orders-dialog/orders-dialog.component";
-import {PointsService} from "../core/points/reward/reward.service";
+import {RewardService} from "../core/points/reward/reward.service";
 import {Reward} from "../core/points/reward/reward.model";
 import {User} from "../core/user/user.model";
 import {UserService} from "../core/user/user.service";
@@ -29,7 +29,7 @@ export class PointsComponent implements OnInit {
   constructor(protected dialog: MatDialog,
               protected libraryService: LibraryService,
               protected orderService: OrderService,
-              protected pointsService: PointsService,
+              protected rewardService: RewardService,
               protected snackBar: MatSnackBar,
               protected userService: UserService
   ) {
@@ -56,7 +56,7 @@ export class PointsComponent implements OnInit {
       })
     })
 
-    this.pointsService.getRewards().subscribe((result: any) => {
+    this.rewardService.getRewards().subscribe((result: any) => {
       this.rewards = result
     })
 
