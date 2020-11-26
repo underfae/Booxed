@@ -1,0 +1,187 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+  .comments {
+    width: 30%;
+    width: 30%;
+    margin-top: -24px;
+    margin-bottom: -24px;
+    background-color: #686767;
+  }
+
+  .book {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+    .book-details {
+      height: 70%;
+
+      .title {
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 24px auto 24px auto;
+        align-items: center;
+
+        h1 {
+          margin-bottom: 0;
+          font-weight: 500;
+          color: #686767;
+        }
+
+        i {
+          font-size: 24px;
+          color: #FF4081;
+          transition-property: font-size;
+          transition-duration: 0.2s;
+          transition-timing-function: linear;
+        }
+        i:hover {
+          font-size: 40px;
+          cursor: pointer;
+        }
+      }
+
+      .book-main-info {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        height: 65%;
+
+        .image {
+          width: 40%;
+          align-self: center;
+
+          img {
+            width: 200px;
+          }
+        }
+
+        .info {
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        label {
+          font-size: 16px;
+          font-weight: 500;
+          color: #686767;
+        }
+
+        mat-progress-bar {
+          margin-top: 16px;
+          margin-bottom: 16px;
+        }
+
+        .book-title {
+          font-size: 28px;
+          height: auto;
+          display: contents;
+          font-weight: 500;
+          margin-bottom: 24px;
+        }
+
+        .authors {
+          display: flex;
+          flex-direction: column;
+          margin-top: 24px;
+          margin-bottom: 8px;
+
+          .book-author {
+            font-size: 16px;
+            margin-bottom: 8px;
+          }
+        }
+
+        .book-description {
+          height: 30%;
+          overflow-y: auto;
+          color: #686767;
+        }
+
+        .buttons {
+          display: flex;
+          justify-content: space-evenly;
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  .more {
+    height: 30%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
+
+    .more-details {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      margin: auto;
+
+      .publisher-category {
+        margin-left: 24px;
+      }
+
+      app-readonly-field {
+        margin-bottom: 8px;
+      }
+
+    }
+
+    .others {
+      width: 40%;
+      margin: auto;
+      margin-left: 40px;
+
+      .link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #FF4081;
+
+        h2 {
+          margin-bottom: 0;
+        }
+
+        i {
+          font-size: 20px;
+          margin-left: 16px;
+          transition-property: margin-left;
+          transition-duration: 0.2s;
+          transition-timing-function: linear;
+        }
+        i:hover{
+          margin-left: 32px;
+          cursor: pointer;
+
+        }
+      }
+
+      .movies {
+        margin-top: 24px;
+
+        h3 {
+          margin-bottom: 8px;
+          color: #686767;
+          font-weight: 500;
+        }
+
+        .movie {
+
+        }
+      }
+    }
+  }
+}
+
+
