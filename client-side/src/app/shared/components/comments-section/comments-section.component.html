@@ -1,0 +1,20 @@
+<div class="title"> Comments</div>
+<form [formGroup]="newComment" (ngSubmit)="addComment()">
+  <mat-form-field>
+    <textarea matInput formControlName="commentText" placeholder="Type your comment"></textarea>
+  </mat-form-field>
+  <button mat-raised-button type="submit"> Add comment</button>
+</form>
+<div class="comments-section-title">All comments</div>
+<ng-container *ngIf=" comments?.length !==0">
+  <ng-container *ngFor="let comment of comments">
+    <div class="comment">
+
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-container *ngIf=" comments?.length ===0">
+
+
+</ng-container>
