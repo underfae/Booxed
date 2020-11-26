@@ -12,6 +12,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from "@angular/material/table";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
@@ -34,6 +35,8 @@ import { NoItemsFoundComponent } from './shared/components/no-items-found/no-ite
 import { SearchComponent } from './search/search.component';
 import { BookPreviewComponent } from './shared/components/book-preview/book-preview.component';
 import {MatSelectModule} from "@angular/material/select";
+import { BookComponent } from './book/book.component';
+import { CommentsSectionComponent } from './shared/components/comments-section/comments-section.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,9 @@ import {MatSelectModule} from "@angular/material/select";
     CreateOrderDialogComponent,
     NoItemsFoundComponent,
     SearchComponent,
-    BookPreviewComponent
+    BookPreviewComponent,
+    BookComponent,
+    CommentsSectionComponent
   ],
   imports: [
     AppRoutingModule,
@@ -70,7 +75,8 @@ import {MatSelectModule} from "@angular/material/select";
     MatTableModule,
     MatTooltipModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

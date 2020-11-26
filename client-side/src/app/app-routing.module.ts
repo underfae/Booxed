@@ -10,6 +10,7 @@ import {BookshelvesComponent} from './bookshelves/bookshelves.component'
 import {UserComponent} from './user/user.component';
 import {PointsComponent} from './points/points.component';
 import {SearchComponent} from './search/search.component';
+import {BookComponent} from "./book/book.component";
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
       {path: '', component: DashboardComponent},
       {path: 'bookshelves', component: BookshelvesComponent},
       {path: 'points', component: PointsComponent},
-      {path: 'search', component: SearchComponent}
+      {path: 'search', component: SearchComponent},
+      {path: 'search/:id', component: BookComponent}
     ]
   }
 ];
