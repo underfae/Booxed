@@ -6,7 +6,7 @@ commentSchema = new mongoose.Schema({
         type: ObjectId
     },
     id_book: {
-        type: ObjectId
+        type: String
     },
     commentText: {
         type: String,
