@@ -13,21 +13,26 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const regex = /googleapis\.com/i;
     if (req.headers.get('noauth')) {
       return next.handle(req.clone())
     } else {
-      const cloned = req.clone({headers: req.headers.set('Authorization', "Bearer " + this.userService.getUserToken())});
-      return next.handle(cloned).pipe(
-        tap(
-          event => {
-          },
-          error => {
-            if (error.error.auth == false) {
-              this.router.navigateByUrl('/login')
+      if (regex.test(req.url)) {
+        return next.handle(req)
+      } else {
+        const cloned = req.clone({headers: req.headers.set('Authorization', "Bearer " + this.userService.getUserToken())});
+        return next.handle(cloned).pipe(
+          tap(
+            event => {
+            },
+            error => {
+              if (error.error.auth == false) {
+                this.router.navigateByUrl('/login')
+              }
             }
-          }
+          )
         )
-      )
+      }
     }
   }
 }
