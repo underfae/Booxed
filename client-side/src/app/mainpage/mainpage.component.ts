@@ -19,7 +19,6 @@ export class MainpageComponent implements OnInit {
     this.userService.getUserData().subscribe(
       result => {
         this.User = result['user']
-        console.log(this.User)
       },
       error => {
         console.log('Could not fetch the user')
