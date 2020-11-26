@@ -4,6 +4,7 @@ const userController = require('../controllers/user.controller')
 const libraryController = require('../controllers/library.controller')
 const rewardController = require('../controllers/reward.controller')
 const orderController = require('../controllers/order.controller')
+const commentController = require('../controllers/comment.controller')
 const tokenHelper = require('../config/jwt.helper')
 
 const router = express.Router()
@@ -35,6 +36,12 @@ router.get('/order/:id',  orderController.getOrder)
 router.delete('/order/:id',  orderController.deleteOrder)
 router.post('/order/create',  orderController.postOrder)
 // router.put('/order/:id',  orderController.putOrder)
+
+router.get('/comments/:id',  commentController.getComments)
+// router.get('/comment/:id',  commentController.getComment)
+router.delete('/comment/:id', commentController.deleteComment)
+router.post('/comment/create', commentController.postComment)
+router.put('/comment/:id', commentController.modifyComment)
 
 
 module.exports = router
