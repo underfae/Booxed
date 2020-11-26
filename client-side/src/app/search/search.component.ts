@@ -10,7 +10,6 @@ import {BooksService} from "../core/books/books.service";
 export class SearchComponent implements OnInit {
 
   books: any[] = []
-  APIKEY: string = "AIzaSyCxuKSh4cSGVMwLVcnDtJEKYTlOpTe-dxo"
   book: string = ''
 
   constructor(protected booksService: BooksService) {
@@ -25,12 +24,9 @@ export class SearchComponent implements OnInit {
 
   searchBooks() {
     this.book = this.search.value.book;
-    this.booksService.getBooks(this.APIKEY, this.book).subscribe((result) => {
-      console.log(result)
+    this.booksService.getBooks(this.book).subscribe((result:any) => {
+      this.books = result.items
     })
   }
 
-  handleInputChange() {
-
-  }
 }

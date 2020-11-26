@@ -1,15 +1,29 @@
-.search-field{
-  form{
+.search-field {
+  form {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    mat-form-field{
+
+    mat-form-field {
       width: 50%;
       margin-right: 24px;
     }
-    button{
+
+    button {
       height: fit-content;
     }
+  }
+}
+
+.search-result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  place-content: center;
+  margin-top: 40px;
+  app-book-preview {
+    margin-right: 16px;
+    margin-bottom: 16px;
   }
 }

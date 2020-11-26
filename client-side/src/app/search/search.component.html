@@ -8,5 +8,7 @@
 </div>
 
 <div class="search-result">
-
+<ng-container *ngFor="let el of books">
+  <app-book-preview bookId="{{el.id}}" title="{{el?.volumeInfo?.title}}" author="{{el?.volumeInfo?.authors[0]}}" image="{{el?.volumeInfo?.imageLinks?.thumbnail}}"></app-book-preview>
+</ng-container>
 </div>
