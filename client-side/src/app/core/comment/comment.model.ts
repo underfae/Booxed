@@ -1,14 +1,15 @@
 export class Comment{
-  id_user: String;
-  id_book: String;
-  commentText: String;
+  id: string;
+  id_user: string;
+  id_book: string;
+  commentText: string;
   dateOfPosting: Date;
   likes: string[];
   reports: string[];
 }
 
 export class UpdatedComment{
-  commentText: String;
+  commentText: string;
   likes: string[];
   reports: string[];
 }
