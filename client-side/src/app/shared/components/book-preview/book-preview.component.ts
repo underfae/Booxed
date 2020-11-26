@@ -10,9 +10,11 @@ export class BookPreviewComponent  {
   @Input() width: string;
   @Input() height: string;
   @Input() user: User;
-  @Input() title: string;
+  @Input() book: any;
   @Input() author: string;
   @Input() image: string;
+  @Input() title: string;
+  @Input() bookId: string;
 
 
 

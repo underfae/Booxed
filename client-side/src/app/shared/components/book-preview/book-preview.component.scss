@@ -25,7 +25,17 @@
     .info{
       text-align: center;
       .title{
-        font-weight: 600;
+        font-weight: 500;
+        width: 110px;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .author{
+        width: 110px;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
 
