@@ -1,5 +1,5 @@
 export class Comment{
-  id: string;
+  _id: string;
   id_user: string;
   id_book: string;
   commentText: string;

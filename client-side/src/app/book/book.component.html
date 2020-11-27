@@ -3,15 +3,18 @@
     <div class="title">
       <h1>BOOK DETAILS</h1>
       <i class="far fa-heart" (click)="addToLiked(book.id)"></i>
+<!--      <i class="fas fa-heart" (click)="deleteFromLiked(book.id)"></i>-->
     </div>
     <div class="book-main-info">
       <div class="image">
         <img src="{{book?.volumeInfo?.imageLinks?.smallThumbnail}}">
       </div>
       <div class="info">
+        <div class="ratings" *ngIf="book?.volumeInfo?.averageRating" >
         <label>Online ratings</label>
         <mat-progress-bar mode="determinate" value="{{getRatingValue(book?.volumeInfo?.averageRating)}}" color="accent"></mat-progress-bar>
-        <div class="book-title"> {{book?.volumeInfo?.title}}</div>
+        </div>
+          <div class="book-title"> {{book?.volumeInfo?.title}}</div>
         <div class="authors">
           <div *ngFor="let author of book?.volumeInfo?.authors">
             <div class="book-author"> {{author}}</div>

@@ -1,20 +1,32 @@
 <div class="title"> Comments</div>
 <form [formGroup]="newComment" (ngSubmit)="addComment()">
-  <mat-form-field>
-    <textarea matInput formControlName="commentText" placeholder="Type your comment"></textarea>
+  <mat-form-field color="accent">
+    <textarea matInput type="text" formControlName="commentText" placeholder="Type your comment"></textarea>
   </mat-form-field>
-  <button mat-raised-button type="submit"> Add comment</button>
+  <button mat-raised-button color="accent" type="submit" [disabled]="!newComment.valid"> Add comment</button>
 </form>
-<div class="comments-section-title">All comments</div>
 <ng-container *ngIf=" comments?.length !==0">
+  <div class="comments-section-title">All comments</div>
   <ng-container *ngFor="let comment of comments">
     <div class="comment">
+      <div class="comment-header">
+        <div class="date"> {{comment.dateOfPosting | date: 'MMMM d, y'}} </div>
+        <div class="actions" *ngIf="comment.id_user !== id_user">
+          <i class="fas fa-thumbs-up like" *ngIf="checkIfReportedOrLiked(comment, 'liked') !== undefined"
+             (click)="likeUnlikeComment(comment, 'unlike')"></i>
+          <i class="far fa-thumbs-up like" *ngIf="checkIfReportedOrLiked(comment, 'liked') === undefined"
+             (click)="likeUnlikeComment(comment, 'like')"></i>
+          <i class="fas fa-flag report" *ngIf="checkIfReportedOrLiked(comment, 'reported') !== undefined "
+             (click)="reportUnreportComment(comment, 'unreport')"></i>
 
+          <i class="far fa-flag report" *ngIf="checkIfReportedOrLiked(comment, 'reported') === undefined"
+             (click)="reportUnreportComment(comment, 'report')"></i>
+        </div>
+        <div class="actions" *ngIf="comment.id_user === id_user">
+          <i class="far fa-trash-alt delete" (click)="deleteComment(comment._id)"></i>
+        </div>
+      </div>
+      <div class="comment-text">{{comment?.commentText}}</div>
     </div>
   </ng-container>
-</ng-container>
-
-<ng-container *ngIf=" comments?.length ===0">
-
-
 </ng-container>

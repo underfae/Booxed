@@ -48,37 +48,69 @@ export class CommentsSectionComponent implements OnInit {
 
   }
 
-  reportComment(comment: Comment) {
+  reportUnreportComment(comment: Comment, action: string) {
     let modifiedComment = new UpdatedComment;
     modifiedComment.likes = comment.likes;
     modifiedComment.commentText = comment.commentText;
     modifiedComment.reports = comment.reports;
-    modifiedComment.reports.push(this.id_user);
-    this.commentService.updateComment(modifiedComment, comment.id).subscribe(
+
+    if (action === 'unreport') {
+      let index = modifiedComment.reports.indexOf(this.id_user);
+      modifiedComment.reports.splice(index, 1);
+    } else if (action === 'report') {
+      modifiedComment.reports.push(this.id_user);
+    }
+
+    this.commentService.updateComment(modifiedComment, comment._id).subscribe(
       () => {
-        this.snackBar.open('Comment reported', 'OK', {duration: 2000});
+        this.snackBar.open('Action completed', 'OK', {duration: 2000});
       },
       () => {
-        this.snackBar.open('Could not report comment', 'OK', {duration: 4000});
+        this.snackBar.open('Could not complete action', 'OK', {duration: 4000});
       }
     )
   }
 
-  likeComment(comment: Comment) {
+  likeUnlikeComment(comment: Comment, action: string) {
     let modifiedComment = new UpdatedComment;
-    modifiedComment.reports = comment.reports;
-    modifiedComment.commentText = comment.commentText;
-    modifiedComment.likes = comment.likes;
-    modifiedComment.likes.push(this.id_user)
-    this.commentService.updateComment(modifiedComment, comment.id).subscribe(
+    modifiedComment.reports = comment?.reports;
+    modifiedComment.commentText = comment?.commentText;
+    modifiedComment.likes = comment?.likes;
+    if (action === 'unlike') {
+      let index = modifiedComment.likes.indexOf(this.id_user);
+      modifiedComment.likes.splice(index, 1);
+    } else if (action === 'like') {
+      modifiedComment.likes.push(this.id_user)
+    }
+    this.commentService.updateComment(modifiedComment, comment?._id).subscribe(
       () => {
-        this.snackBar.open('Comment liked', 'OK', {duration: 2000});
+        this.snackBar.open('Action completed', 'OK', {duration: 2000});
       },
       () => {
-        this.snackBar.open('Could not like comment', 'OK', {duration: 4000});
+        this.snackBar.open('Could not complete action', 'OK', {duration: 4000});
       }
     )
   }
 
+
+  checkIfReportedOrLiked(comment: Comment, action: string) {
+    if (comment) {
+      if (action === 'reported') {
+        return comment.reports.find(x => x === this.id_user)
+      } else if (action === 'liked') {
+        return comment.likes.find(x => x === this.id_user)
+      }
+    }
+  }
+
+  deleteComment(id: string) {
+    this.commentService.deleteComment(id).subscribe(
+      () => {
+        this.snackBar.open('Comment successfully deleted', 'OK', {duration: 2000});
+      },
+      () => {
+        this.snackBar.open('Comment could not be deleted', 'OK', {duration: 4000});
+      })
+  }
 
 }

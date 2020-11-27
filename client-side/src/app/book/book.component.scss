@@ -3,17 +3,22 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
+  align-items: center;
 
   .comments {
     width: 30%;
-    width: 30%;
+    height: 100%;
+    overflow-y: auto;
     margin-top: -24px;
     margin-bottom: -24px;
     background-color: #686767;
+    border-radius: 0 35px  35px 0;
   }
 
   .book {
     width: 70%;
+    height: 100%;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 
@@ -21,17 +26,17 @@
       height: 70%;
 
       .title {
-        height: 20%;
+        height: 10%;
         display: flex;
         justify-content: space-between;
         width: 80%;
-        margin: 24px auto 24px auto;
+        margin: 24px auto 0 auto;
         align-items: center;
 
         h1 {
           margin-bottom: 0;
           font-weight: 500;
-          color: #686767;
+          color: #FF4081;
         }
 
         i {
@@ -51,7 +56,7 @@
         display: flex;
         width: 80%;
         margin: auto;
-        height: 65%;
+        height: 80%;
 
         .image {
           width: 40%;
@@ -66,6 +71,7 @@
           width: 60%;
           display: flex;
           flex-direction: column;
+          justify-content: center;
         }
 
         label {
@@ -100,7 +106,7 @@
         }
 
         .book-description {
-          height: 30%;
+          height: 35%;
           overflow-y: auto;
           color: #686767;
         }
