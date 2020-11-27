@@ -56,7 +56,7 @@
         display: flex;
         width: 80%;
         margin: auto;
-        height: 80%;
+        height: 90%;
 
         .image {
           width: 40%;
@@ -126,13 +126,11 @@
     margin: auto;
     display: flex;
     flex-direction: row;
-    margin-left: 24px;
-
+    justify-content: space-evenly;
     .more-details {
       display: flex;
       flex-direction: row;
-      width: 50%;
-      margin: auto;
+      margin: auto 0;
 
       .publisher-category {
         margin-left: 24px;
@@ -140,37 +138,27 @@
 
       app-readonly-field {
         margin-bottom: 8px;
+        font-size: 16px;
+        font-style: italic;
+        ::ng-deep{
+          label{
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            color:#FF4081;
+          }
+        }
       }
 
     }
 
     .others {
-      width: 40%;
-      margin: auto;
-      margin-left: 40px;
-
-      .link {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        color: #FF4081;
-
-        h2 {
-          margin-bottom: 0;
-        }
-
-        i {
-          font-size: 20px;
-          margin-left: 16px;
-          transition-property: margin-left;
-          transition-duration: 0.2s;
-          transition-timing-function: linear;
-        }
-        i:hover{
-          margin-left: 32px;
-          cursor: pointer;
-
-        }
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      button{
+        width: fit-content;
       }
 
       .movies {
@@ -180,10 +168,6 @@
           margin-bottom: 8px;
           color: #686767;
           font-weight: 500;
-        }
-
-        .movie {
-
         }
       }
     }
