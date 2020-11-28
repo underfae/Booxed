@@ -37,6 +37,10 @@ import { BookPreviewComponent } from './shared/components/book-preview/book-prev
 import {MatSelectModule} from "@angular/material/select";
 import { BookComponent } from './book/book.component';
 import { CommentsSectionComponent } from './shared/components/comments-section/comments-section.component';
+import { LikedAndReadComponent } from './liked-and-read/liked-and-read.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { AddToBookshelfDialogComponent } from './shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component';
+import { BookshelfDialogComponent } from './shared/components/bookshelf-dialog/bookshelf-dialog.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +60,11 @@ import { CommentsSectionComponent } from './shared/components/comments-section/c
     SearchComponent,
     BookPreviewComponent,
     BookComponent,
-    CommentsSectionComponent
+    CommentsSectionComponent,
+    LikedAndReadComponent,
+    PageNotFoundComponent,
+    AddToBookshelfDialogComponent,
+    BookshelfDialogComponent
   ],
   imports: [
     AppRoutingModule,

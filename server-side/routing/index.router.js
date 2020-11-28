@@ -12,12 +12,15 @@ const router = express.Router()
 router.post('/register', userController.registerUser)
 router.post('/authenticate', userController.authentication)
 router.get('/loggedUser', tokenHelper.jwtVerification, userController.loggedUser)
+router.put('/modifyUser/:id', userController.modifyUser)
 
 router.post('/bookshelf/create',  bookshelfController.addBookshelf)
 router.delete('/bookshelf/:id',  bookshelfController.deleteBookshelf)
 router.get('/bookshelf/:id',  bookshelfController.getBookshelf)
 router.get('/bookshelves/:id',  bookshelfController.getBookshelves)
-// router.put('/bookshelf/:id',  bookshelfController.putBookshelf)
+router.put('/bookshelf/add/:id',  bookshelfController.addBookToBookshelf)
+router.put('/bookshelf/delete',  bookshelfController.deleteBookFromBookshelf)
+
 
 router.get('/libraries',  libraryController.getLibraries)
 router.get('/library/:id',  libraryController.getLibrary)
@@ -42,6 +45,5 @@ router.get('/comments/:id',  commentController.getComments)
 router.delete('/comment/:id', commentController.deleteComment)
 router.post('/comment/create', commentController.postComment)
 router.put('/comment/:id', commentController.modifyComment)
-
 
 module.exports = router
