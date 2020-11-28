@@ -8,12 +8,12 @@ module.exports.addBookshelf = (req, res) => {
     bookshelf.name = req.body.name
     bookshelf.creation_date = req.body.creation_date
     bookshelf.description = req.body.description
-    bookshelf.books_amount = req.body.books_amount
+    bookshelf.books = req.body.books
     bookshelf.save((error, result) => {
         if (error) {
             res.status(400).send(error.errors)
         } else {
-            res.status(200).send('Bookshelf successfully added')
+            res.status(200).json(result);
         }
     })
 }
@@ -27,7 +27,7 @@ module.exports.deleteBookshelf = (req, res) => {
             if (error) {
                 res.status(500).send(error);
             } else {
-                res.status(200).send('Deleted succesfully.' + post)
+                res.status(200).json({status: true, message: 'Bookshelf deleted succesfully'});
             }
         })
     }
@@ -60,4 +60,31 @@ module.exports.getBookshelves = (req, res) => {
             }
         })
     }
+}
+
+module.exports.addBookToBookshelf = (req, res) => {
+    const newBook = req.body
+    Bookshelf.findByIdAndUpdate(req.params.id, {$push: {books: newBook}}, {new: true}, (error, result) => {
+        if (error) {
+            res.status(400).send(error.errors)
+        } else {
+            res.status(200).send(result)
+        }
+    })
+
+}
+
+module.exports.deleteBookFromBookshelf = (req, res) => {
+    const id_book = req.body.id_book
+    const id_bookshelf = req.body.id_bookshelf
+
+    Bookshelf.findByIdAndUpdate( id_bookshelf, { "$pull": { "books": { "id_book": id_book } }}, { safe: true, upsert: true }, function(error, result) {
+        if (error) {
+            res.status(400).send(error.errors)
+        } else {
+            res.status(200).json({message: 'Succesfully deleted'})
+        }
+    })
+
+
 }

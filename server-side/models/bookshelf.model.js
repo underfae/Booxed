@@ -1,4 +1,18 @@
 const mongoose = require('mongoose')
+const bookPreview  = {
+    id_book:{
+        type: String
+    },
+    authors:{
+        type: [String]
+    },
+    title:{
+        type: String
+    },
+    image:{
+        type: String
+    }
+}
 
 const bookshelfSchema = new mongoose.Schema({
     id_user: {
@@ -16,8 +30,8 @@ const bookshelfSchema = new mongoose.Schema({
         type: String,
         required: "Description is required"
     },
-    books_amount: {
-        type: Number
+    books: {
+        type: [bookPreview]
     }
 })
 
