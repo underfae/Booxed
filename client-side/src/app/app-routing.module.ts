@@ -11,6 +11,8 @@ import {UserComponent} from './user/user.component';
 import {PointsComponent} from './points/points.component';
 import {SearchComponent} from './search/search.component';
 import {BookComponent} from "./book/book.component";
+import {LikedAndReadComponent} from "./liked-and-read/liked-and-read.component";
+import {PageNotFoundComponent} from "./shared/components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   {
@@ -29,15 +31,18 @@ const routes: Routes = [
     path: '', redirectTo: '/login', pathMatch: 'full'
   },
   {
-    path: 'mainPage', component: MainpageComponent, canActivate: [AuthenticationGuard],
+    path: 'booxed', component: MainpageComponent, canActivate: [AuthenticationGuard],
     children: [
       {path: '', component: DashboardComponent},
       {path: 'bookshelves', component: BookshelvesComponent},
       {path: 'points', component: PointsComponent},
       {path: 'search', component: SearchComponent},
-      {path: 'search/:id', component: BookComponent}
+      {path: 'search/:id', component: BookComponent},
+      {path: 'liked', component: LikedAndReadComponent},
+      {path: 'read', component: LikedAndReadComponent}
     ]
-  }
+  },
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
