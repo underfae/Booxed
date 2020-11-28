@@ -5,7 +5,7 @@
   <div class="element">
     <div class="label"> Liked Books</div>
     <div class="circle">
-      {{user?.liked}}
+      {{user?.liked?.length}}
     </div>
   </div>
   <div class="element">
@@ -17,7 +17,7 @@
   <div class="element">
     <div class="label"> Books you've read</div>
     <div class="circle">
-      {{user?.read}}
+      {{user?.read?.length}}
     </div>
   </div>
 </div>
@@ -29,8 +29,8 @@
     </div>
     <div class="buttons">
       <button mat-raised-button (click)="openDialog()">Create new bookshelf</button>
-      <button mat-raised-button  [routerLink]="['/mainPage/bookshelves']" class="bookshelves">Your bookshelves</button>
-      <button mat-raised-button  [routerLink]="['/mainPage/search']" class="find">Find a book</button>
+      <button mat-raised-button  [routerLink]="['/booxed/bookshelves']" class="bookshelves">Your bookshelves</button>
+      <button mat-raised-button  [routerLink]="['/booxed/search']" class="find">Find a book</button>
     </div>
   </div>
   <div class="random-books">
