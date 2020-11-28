@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {BooksService} from "../core/books/books.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ export class SearchComponent implements OnInit {
   books: any[] = []
   book: string = ''
 
-  constructor(protected booksService: BooksService) {
+  constructor(protected booksService: BooksService, protected snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -24,9 +25,18 @@ export class SearchComponent implements OnInit {
 
   searchBooks() {
     this.book = this.search.value.book;
-    this.booksService.getBooks(this.book).subscribe((result:any) => {
-      this.books = result.items
-    })
+    if (this.book === '') {
+      this.snackBar.open('You need to provide a book title or author name!', 'OK', {duration: 2000})
+    } else {
+      this.booksService.getBooks(this.book).subscribe((result: any) => {
+        this.books = result.items
+      })
+    }
+  }
+
+  clearSearchResult() {
+    this.search.reset();
+    this.books = [];
   }
 
 }

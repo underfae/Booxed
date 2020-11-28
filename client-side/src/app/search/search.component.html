@@ -1,14 +1,21 @@
 <div class="search-field">
   <form [formGroup]="search" (ngSubmit)="searchBooks()">
-    <mat-form-field appearance="legacy">
+    <mat-form-field appearance="legacy" color="accent">
       <input matInput type="text" placeholder="Search by book title or author name" formControlName="book">
+      <i class="fas fa-times" (click)="clearSearchResult()"></i>
     </mat-form-field>
-    <button mat-raised-button color="accent" type="submit">Search</button>
+
+    <button mat-raised-button type="submit">Search</button>
   </form>
 </div>
 
 <div class="search-result">
-<ng-container *ngFor="let el of books">
-  <app-book-preview bookId="{{el.id}}" title="{{el?.volumeInfo?.title}}" author="{{el?.volumeInfo?.authors[0]}}" image="{{el?.volumeInfo?.imageLinks?.thumbnail}}"></app-book-preview>
-</ng-container>
+  <ng-container *ngFor="let el of books">
+    <app-book-preview bookId="{{el.id}}" title="{{el?.volumeInfo?.title}}" author="{{el?.volumeInfo?.authors}}"
+                      image="{{el?.volumeInfo?.imageLinks?.thumbnail}}"></app-book-preview>
+  </ng-container>
+  <ng-container *ngIf="books === undefined">
+    <app-no-items-found text="We couldn't find what you're looking for :( "></app-no-items-found>
+
+  </ng-container>
 </div>
