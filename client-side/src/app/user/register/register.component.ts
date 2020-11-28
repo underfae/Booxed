@@ -32,8 +32,8 @@ export class RegisterComponent {
 
   register() {
     Object.assign(this.user, this.userRegistered.value)
-    this.user.liked = 0;
-    this.user.read = 0;
+    this.user.liked = [];
+    this.user.read = [];
     this.user.points = 0;
 
     this.userService.registerUser(this.user).subscribe(
