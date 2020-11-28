@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Comment, UpdatedComment} from "../../../core/comment/comment.model";
 import {CommentService} from "../../../core/comment/comment.service";
@@ -14,33 +14,36 @@ export class CommentsSectionComponent implements OnInit {
   @Input() id_user: string;
 
   comments = [];
-  comment = new Comment;
 
   constructor(protected commentService: CommentService,
-              protected snackBar: MatSnackBar,) {
+              protected snackBar: MatSnackBar, protected cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
     this.commentService.getComments(this.id_book).subscribe((result: any) => {
-      console.log(result)
       this.comments = result
     })
 
   }
 
   newComment = new FormGroup({
-    commentText: new FormControl('', [Validators.required, Validators.maxLength(500)])
+    commentText: new FormControl('', [Validators.maxLength(500)])
   })
 
   addComment() {
-    this.comment.commentText = this.newComment.value.commentText;
-    this.comment.id_book = this.id_book;
-    this.comment.id_user = this.id_user;
-    this.comment.dateOfPosting = new Date();
-    this.comment.likes = [];
-    this.comment.reports = [];
-    this.commentService.postComment(this.comment).subscribe((result: any) => {
+    const comment = new Comment()
+    comment.commentText = this.newComment.value.commentText;
+    comment.id_book = this.id_book;
+    comment.id_user = this.id_user;
+    comment.dateOfPosting = new Date();
+    comment.likes = [];
+    comment.reports = [];
+    this.commentService.postComment(comment).subscribe((result: any) => {
         this.snackBar.open('Comment added succesfully', 'OK', {duration: 2000});
+        this.comments.push(result)
+        this.cdr.detectChanges()
+        this.newComment.reset()
+
       },
       () => {
         this.snackBar.open('Could not add a comment', 'OK', {duration: 4000});
@@ -104,13 +107,22 @@ export class CommentsSectionComponent implements OnInit {
   }
 
   deleteComment(id: string) {
-    this.commentService.deleteComment(id).subscribe(
-      () => {
-        this.snackBar.open('Comment successfully deleted', 'OK', {duration: 2000});
-      },
-      () => {
-        this.snackBar.open('Comment could not be deleted', 'OK', {duration: 4000});
-      })
+    if(id){
+      console.log(id)
+      this.commentService.deleteComment(id).subscribe(
+        () => {
+          this.snackBar.open('Comment successfully deleted', 'OK', {duration: 2000});
+        },
+        () => {
+          this.snackBar.open('Comment could not be deleted', 'OK', {duration: 4000});
+        },
+        ()=>{
+          this.comments.splice(this.comments.findIndex(function(i){
+            return i.id === id;
+          }), 1);
+        })
+    }
+
   }
 
 }
