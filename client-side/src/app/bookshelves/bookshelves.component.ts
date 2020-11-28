@@ -1,10 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {CreateBookshelfDialogComponent} from "../shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component";
 import {Bookshelf} from "../core/bookshelves/bookshelf.model";
 import {UserService} from "../core/user/user.service";
 import {User} from "../core/user/user.model";
 import {BookshelfService} from "../core/bookshelves/bookshelf.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {AddedBook} from "../core/books/book.model";
+import {BookshelfDialogComponent} from "../shared/components/bookshelf-dialog/bookshelf-dialog.component";
 
 @Component({
   selector: 'app-bookshelves',
@@ -21,7 +24,8 @@ export class BookshelvesComponent implements OnInit {
 
   constructor(protected dialog: MatDialog,
               protected userService: UserService,
-              protected bookshelfService: BookshelfService) {
+              protected bookshelfService: BookshelfService,
+              protected snackBar: MatSnackBar, protected cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -50,18 +54,42 @@ export class BookshelvesComponent implements OnInit {
     });
   }
 
+  openBookshelfDialog(bookshelf: Bookshelf){
+    const dialogRef = this.dialog.open(BookshelfDialogComponent, {
+      width: '600px',
+      maxHeight: '600px',
+      data: {bookshelf: bookshelf}
+    });
+  }
+
   addBookshelf() {
-    this.addedBookshelf.books_amount = 0;
+    this.addedBookshelf.books = [];
     this.addedBookshelf.creation_date = new Date();
     this.addedBookshelf.id_user = this.user._id;
-    this.bookshelfService.addBookshelf(this.addedBookshelf).subscribe(result => {
-      console.log(result)
-    })
+
+    this.bookshelfService.addBookshelf(this.addedBookshelf).subscribe(
+      (result: any) => {
+        this.snackBar.open('Bookshelf added succesfully.', 'OK', {duration: 2000});
+        this.bookshelves.push(result)
+        this.cdr.detectChanges()
+      },
+      () => {
+        this.snackBar.open('Could not add a bookshelf', 'OK', {duration: 4000});
+      })
+
   }
 
   deleteBookshelf(id: string) {
-    this.bookshelfService.deleteBookshelf(id).subscribe(result=>{
-      console.log(result)
-    })
+    if (id) {
+      this.bookshelfService.deleteBookshelf(id).subscribe(() => {
+          this.snackBar.open('Bookshelf deleted succesfully.', 'OK', {duration: 2000});
+          this.bookshelves.splice(this.bookshelves.findIndex(function (i) {
+            return i._id === id;
+          }), 1);
+        },
+        () => {
+          this.snackBar.open('Could not delete a bookshelf', 'OK', {duration: 4000});
+        })
+    }
   }
 }

@@ -5,7 +5,7 @@
 <div class="bookshelves">
   <ng-container *ngIf="bookshelves.length !== 0">
     <div *ngFor="let item of bookshelves">
-      <div class="mat-card">
+      <div class="mat-card" (click)="openBookshelfDialog(item)">
         <img src="./assets/img/books.png">
         <div class="info">
           <h1 class="name"> {{item.name.toUpperCase()}}</h1>
@@ -14,7 +14,7 @@
         <div class="info-actions">
           <div class="books">
             <label>BOOKS</label>
-            <p> {{item.books_amount}}</p>
+            <p> {{item.books.length}}</p>
           </div>
           <button mat-button color="accent" class="delete" (click)="deleteBookshelf(item._id)">
             DELETE BOOKSHELF <i class="far fa-trash-alt"></i>
