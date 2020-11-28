@@ -1,3 +1,5 @@
+import {AddedBook} from "../books/book.model";
+
 export class User {
   _id: string;
   username: string;
@@ -6,11 +8,17 @@ export class User {
   name: string;
   surname: string;
   points: number;
-  liked: number;
-  read: number;
+  liked: AddedBook[];
+  read: AddedBook[];
 }
 
 export class LoggedUser {
   username: string;
   password: string;
+}
+export class ModifiedUser{
+  id: string;
+  liked: AddedBook[];
+  read: AddedBook[];
+  points: number;
 }

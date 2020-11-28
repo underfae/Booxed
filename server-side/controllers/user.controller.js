@@ -15,7 +15,7 @@ module.exports.registerUser = (req, res, next) => {
     user.read = req.body.read
     user.save((error, result) => {
         if (error) {
-            error.code == 11000 ? res.status(422).send(Object.keys(error.keyValue)[0] + ' must be unique!') : next(error)
+            error.code === 11000 ? res.status(422).send(Object.keys(error.keyValue)[0] + ' must be unique!') : next(error)
         } else {
             res.status(200).send(result)
         }
@@ -39,5 +39,20 @@ module.exports.loggedUser = (request, response, next) => {
                 status: true,
                 user: _.pick(result, ['_id', 'username', 'name', 'surname', 'email', 'liked', 'read', 'points'])
             })
+    })
+}
+
+module.exports.modifyUser = (req, res) =>{
+    let modifiedUser = {
+        points: req.body.points,
+        liked: req.body.liked,
+        read: req.body.read
+    }
+    User.findByIdAndUpdate(req.params.id, {$set: modifiedUser}, {new: true}, (error, result) => {
+        if (error) {
+            res.status(400).send(error.errors)
+        } else {
+            res.status(200).send(result)
+        }
     })
 }

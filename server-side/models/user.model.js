@@ -1,6 +1,20 @@
 const mongoose = require('mongoose')
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const bookPreview  = {
+    id_book:{
+        type: String
+    },
+    authors:{
+        type: [String]
+    },
+    title:{
+        type: String
+    },
+    image:{
+        type: String
+    }
+}
 
 const user = new mongoose.Schema({
     username: {
@@ -32,10 +46,10 @@ const user = new mongoose.Schema({
         type: Number
     },
     liked: {
-        type: Number
+        type: [bookPreview]
     },
     read: {
-        type: Number
+        type: [bookPreview]
     },
     salt: String
 })

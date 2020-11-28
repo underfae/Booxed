@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 import {environment} from "src/environments/environment";
-import {LoggedUser, User} from "./user.model";
+import {LoggedUser, ModifiedUser, User} from "./user.model";
 
 @Injectable({
   providedIn: "root",
@@ -55,5 +55,9 @@ export class UserService {
     } else {
       return false
     }
+  }
+
+  modifyUser(modifiedUser: ModifiedUser){
+    return this.http.put(environment.apiBaseUrl + '/modifyUser/' + modifiedUser.id, modifiedUser)
   }
 }
