@@ -26,14 +26,14 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if (this.userService.isUserLogged())
       console.log(this.userService.isUserLogged())
-      this.router.navigate(['/mainPage'])
+      this.router.navigate(['/booxed'])
   }
 
   login() {
     this.userService.loginUser(this.loggedUser.value).subscribe(
       result => {
         this.userService.setUserToken(result['token']);
-        this.router.navigateByUrl('mainPage');
+        this.router.navigateByUrl('booxed');
       },
       error => {
         this.snackBar.open(error.error.message, 'OK', {duration: 4000})
