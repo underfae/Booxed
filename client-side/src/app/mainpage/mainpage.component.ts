@@ -10,10 +10,14 @@ import {UserService} from "../core/user/user.service";
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
-  constructor(protected userService: UserService, private router: Router) {
-  }
 
   User = new User;
+  toogle: boolean = false;
+
+  constructor(protected router: Router,
+              protected userService: UserService
+              ) {
+  }
 
   ngOnInit(): void {
     this.userService.getUserData().subscribe(
@@ -24,6 +28,10 @@ export class MainpageComponent implements OnInit {
         console.log('Could not fetch the user')
       }
     )
+  }
+
+  clickEvent(){
+    this.toogle = !this.toogle;
   }
 
   logout() {

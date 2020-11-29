@@ -5,13 +5,13 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  background: #1d1f1f;
+  background: $background-color;
 
   mat-card {
     width: 75%;
     height: 85%;
     margin: auto 0;
-    border-radius: 35px;
+    border-radius: $br-regular;
     padding: 0;
   }
 
@@ -19,10 +19,21 @@
     width: 20%;
     display: flex;
     flex-direction: column;
+    transition-property: height;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
 
-    img {
-      margin: $margin-large auto;
-      width: 150px;
+    .logo {
+      align-self: center;
+
+      i {
+        display: none;
+      }
+
+      img {
+        margin: $margin-large auto;
+        width: $logo-big;
+      }
     }
 
     ul {
@@ -34,7 +45,7 @@
         font-weight: $fw-bold;
         color: white;
         margin: $margin-regular;
-        height: 50px;
+        height: $navbar-element-height-big;
         width: 80%;
         display: flex;
         flex-direction: row;
@@ -42,7 +53,7 @@
         transition-property: width, height;
         transition-duration: 0.2s;
         transition-timing-function: linear;
-        border-radius: 20px;
+        border-radius: $br-default;
 
         i {
           color: white;
@@ -56,10 +67,10 @@
 
       li:hover {
         cursor: pointer;
-        background-color: rgba(255, 255, 255, 0.6);
+        background-color: $sidebar-hover-color;
         width: 100%;
         color: $primary-color;
-        height: 60px;
+        height: $navbar-element-height-big + $navbar-element-height-hover;
 
         i {
           color: $primary-color;
@@ -72,4 +83,172 @@
     }
   }
 
+}
+
+//Media queries for desktop
+@media (min-width: 768px) and (max-width: 1280px) {
+  :host {
+    nav {
+      .logo {
+        i {
+          display: none;
+        }
+
+        img {
+          display: flex;
+          margin: $margin-regular auto;
+          width: $logo-medium;
+        }
+      }
+
+      ul {
+        padding-left: 0;
+
+        li {
+          font-size: $fs-default-2;
+          margin: $margin-default auto;
+          height: $navbar-element-height-small;
+          border-radius: $br-small;
+        }
+
+        li:hover {
+          height: $navbar-element-height-small + $navbar-element-height-hover;
+          width: 110%;
+        }
+
+        .separator {
+          height: 60px;
+        }
+      }
+    }
+  }
+}
+
+//Media queries for tablet
+@media screen and (min-width: 600px) and(max-width: 768px) {
+  :host {
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    background: white;
+
+    mat-card {
+      width: 100%;
+      height: 87%;
+      margin-top: $tablet-navbar-height;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .expanded {
+      height: 100%;
+      overflow-y: scroll;
+    }
+    .disabled {
+      text-align: center;
+      height: $tablet-navbar-height;
+    }
+
+    nav {
+      background: $background-color;
+      width: 100%;
+      height: 15%;
+      overflow: hidden;
+      z-index: 99;
+      position: absolute;
+
+      .logo {
+        display: flex;
+        flex-direction: row;
+        margin: $margin-regular auto;
+        align-items: center;
+
+        i {
+          color: $primary-color;
+          display: flex;
+          margin-left: $margin-default;
+        }
+
+        img {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+//Media queries for smartphone
+@media screen and (max-width: 600px) {
+  :host {
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    background: white;
+
+    mat-card {
+      width: 100%;
+      height: 87%;
+      margin-top: $mobile-navbar-height;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .expanded {
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    .disabled {
+      text-align: center;
+      height: $mobile-navbar-height;
+    }
+
+    nav {
+      background: $background-color;
+      width: 100%;
+      height: 10%;
+      overflow: hidden;
+      z-index: 99;
+      position: absolute;
+
+      .logo {
+        display: flex;
+        flex-direction: row;
+        margin: $margin-default auto;
+        align-items: center;
+
+        i {
+          color: $primary-color;
+          display: flex;
+          margin-left: $margin-default;
+        }
+
+        img {
+          margin: 0;
+          width: $logo-small;
+        }
+      }
+
+      ul {
+        padding-left: 0;
+
+        li {
+          font-size: $fs-default-2;
+          margin: $margin-default auto;
+          height: $navbar-element-height-small;
+          border-radius: 0;
+        }
+
+        li:hover {
+          height: $navbar-element-height-small + $navbar-element-height-hover;
+        }
+
+        .separator {
+          height: 80px;
+        }
+      }
+    }
+  }
 }
