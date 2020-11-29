@@ -13,9 +13,9 @@ import {UserService} from "../../core/user/user.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(protected  userService: UserService,
-              protected router: Router,
-              protected snackBar: MatSnackBar) {
+  constructor(protected router: Router,
+              protected snackBar: MatSnackBar,
+              protected userService: UserService) {
   }
 
   loggedUser = new FormGroup({
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if (this.userService.isUserLogged())
       console.log(this.userService.isUserLogged())
-      this.router.navigate(['/booxed'])
+    this.router.navigate(['/booxed'])
   }
 
   login() {
