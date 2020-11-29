@@ -8,17 +8,16 @@
   margin: auto;
   text-align: center;
 
-
   form {
     display: flex;
     flex-direction: column;
     width: 50%;
     margin: auto;
-
     img {
       width: 150px;
       margin: 0 auto $margin-large-xl auto;
     }
+
     p {
       color: $primary-color;
       margin-bottom: $margin-large;
@@ -30,7 +29,6 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
       mat-form-field {
         width: 45%;
       }
@@ -65,9 +63,55 @@
     color: $primary-color;
     font-size: $fs-small;
     cursor: pointer;
-
     &.terms-info {
       margin: $margin-default 0;
+    }
+  }
+}
+
+//Media queries for desktop
+@media (min-width: 768px) and (max-width: 1280px){
+  :host {
+    form {
+      img {
+        margin: 0 auto $margin-large auto;
+      }
+
+      mat-checkbox {
+        margin-top: $margin-default;
+      }
+    }
+  }
+}
+
+//Media queries for tablet
+@media screen and  (min-width: 600px) and (max-width: 768px){
+  :host {
+    form {
+      width: 80%;
+      mat-checkbox {
+        margin-top: $margin-default;
+      }
+    }
+  }
+}
+
+//Media queries for smartphone
+@media screen and (max-width: 600px){
+  :host {
+    form {
+      width: 70%;
+      .name-surname {
+        flex-direction: column;
+        justify-content: normal;
+        mat-form-field {
+          width: 100%;
+        }
+      }
+
+      mat-checkbox {
+        margin-top: $margin-default;
+      }
     }
   }
 }

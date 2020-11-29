@@ -5,74 +5,43 @@
     <mat-form-field>
       <mat-label>Name</mat-label>
       <input matInput type="text" formControlName="name" required/>
-      <mat-error *ngIf="userRegistered.get('name').hasError('required')"
-      >Name is required
-      </mat-error
-      >
+      <mat-error *ngIf="userRegistered.get('name').hasError('required')">Name is required</mat-error>
     </mat-form-field>
+
     <mat-form-field>
       <mat-label>Surname</mat-label>
       <input matInput type="text" formControlName="surname" required/>
-      <mat-error *ngIf="userRegistered.get('surname').hasError('required')"
-      >Surname is required
-      </mat-error
-      >
+      <mat-error *ngIf="userRegistered.get('surname').hasError('required')">Surname is required</mat-error>
     </mat-form-field>
   </div>
+
   <mat-form-field>
     <mat-label>Username</mat-label>
     <input matInput type="text" formControlName="username" required/>
-    <mat-error *ngIf="userRegistered.get('username').hasError('required')"
-    >Username is required
-    </mat-error
-    >
+    <mat-error *ngIf="userRegistered.get('username').hasError('required')">Username is required</mat-error>
   </mat-form-field>
+
   <mat-form-field>
     <mat-label>E-mail</mat-label>
     <input matInput type="email" formControlName="email" required/>
-    <mat-error *ngIf="userRegistered.get('email').hasError('required')"
-    >E-mail is required
-    </mat-error
-    >
-    <mat-error *ngIf="userRegistered.get('email').hasError('email')"
-    >Invalid email
-    </mat-error
-    >
+    <mat-error *ngIf="userRegistered.get('email').hasError('required')">E-mail is required</mat-error>
+    <mat-error *ngIf="userRegistered.get('email').hasError('email')">Invalid email</mat-error>
   </mat-form-field>
+
   <mat-form-field>
     <mat-label>Password</mat-label>
-    <input
-      matInput
-      type="password"
-      formControlName="password"
-      #password
-      required
-    />
-    <i
-      matTooltip="Password must have 8 characters and contain one special character, one uppercase letter, one lowercase letter and one number!"
-      class="far fa-question-circle"
-    ></i>
-    <mat-error *ngIf="userRegistered.get('password').hasError('required')"
-    >Password is required!
-    </mat-error
-    >
-    <mat-error *ngIf="userRegistered.get('password').hasError('pattern')"
-    >Password must follow the specified patttern!
-    </mat-error
-    >
+    <input matInput type="password" formControlName="password" #password required/>
+    <i matTooltip="Password must have 8 characters and contain one special character, one uppercase letter, one lowercase letter and one number!"
+      class="far fa-question-circle"></i>
+    <mat-error *ngIf="userRegistered.get('password').hasError('required')">Password is required!</mat-error>
+    <mat-error *ngIf="userRegistered.get('password').hasError('pattern')">Password must follow the specified patttern!</mat-error>
   </mat-form-field>
-  <mat-checkbox color="primary" #terms required
-  >I agree with terms and conditions*
-  </mat-checkbox
-  >
-  <button
-    mat-raised-button
-    color="accent"
-    type="submit"
-    [disabled]="!userRegistered.valid || !terms.checked"
-  >
+
+  <mat-checkbox color="primary" #terms required>I agree with terms and conditions*</mat-checkbox>
+  <button mat-raised-button color="accent" type="submit" [disabled]="!userRegistered.valid || !terms.checked">
     Sign up!
   </button>
 </form>
+
 <a routerLink="/login">Already have an account? Sign in! </a>
 <a class="terms-info"> Terms of use. Privacy policy</a>

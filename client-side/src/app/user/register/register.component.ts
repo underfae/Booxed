@@ -14,20 +14,20 @@ import {UserService} from '../../core/user/user.service';
 })
 export class RegisterComponent {
 
-  constructor(protected userService: UserService,
-              protected snackBar: MatSnackBar,
-              protected router: Router) {
-  }
-
   user = new User;
   serverErrors: string;
+
+  constructor(protected router: Router,
+              protected snackBar: MatSnackBar,
+              protected userService: UserService,) {
+  }
 
   userRegistered = new FormGroup({
     name: new FormControl('', [Validators.required]),
     surname: new FormControl('', [Validators.required]),
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@~`#$%^&*()<>,.\\\/;:]).{8,}$')]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@~`#$%^_&*()<>,.\\\/;:]).{8,}$')]),
   })
 
   register() {
