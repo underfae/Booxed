@@ -1,9 +1,10 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {UserService} from "../core/user/user.service";
+import {ChangeDetectorRef, Component} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
+import {MatSnackBar} from "@angular/material/snack-bar";
+
 import {BookshelvesComponent} from "../bookshelves/bookshelves.component";
 import {BookshelfService} from "../core/bookshelves/bookshelf.service";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {UserService} from "../core/user/user.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,13 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class DashboardComponent extends BookshelvesComponent {
 
 
-  constructor(protected userService: UserService, protected dialog: MatDialog, protected bookshelfService: BookshelfService, protected snackBar: MatSnackBar, protected cdr: ChangeDetectorRef) {
+  constructor(
+    protected bookshelfService: BookshelfService,
+    protected cdr: ChangeDetectorRef,
+    protected dialog: MatDialog,
+    protected snackBar: MatSnackBar,
+    protected userService: UserService,
+  ) {
     super(dialog, userService, bookshelfService, snackBar, cdr)
   }
 
