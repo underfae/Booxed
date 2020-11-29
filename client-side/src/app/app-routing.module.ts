@@ -2,17 +2,17 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {AuthenticationGuard} from "./user/auth/authentication.guard";
+import {BookComponent} from "./book/book.component";
+import {BookshelvesComponent} from './bookshelves/bookshelves.component'
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {LikedAndReadComponent} from "./liked-and-read/liked-and-read.component";
 import {LoginComponent} from './user/login/login.component';
 import {MainpageComponent} from './mainpage/mainpage.component';
-import {RegisterComponent} from './user/register/register.component';
-import {BookshelvesComponent} from './bookshelves/bookshelves.component'
-import {UserComponent} from './user/user.component';
-import {PointsComponent} from './points/points.component';
-import {SearchComponent} from './search/search.component';
-import {BookComponent} from "./book/book.component";
-import {LikedAndReadComponent} from "./liked-and-read/liked-and-read.component";
 import {PageNotFoundComponent} from "./shared/components/page-not-found/page-not-found.component";
+import {PointsComponent} from './points/points.component';
+import {RegisterComponent} from './user/register/register.component';
+import {SearchComponent} from './search/search.component';
+import {UserComponent} from './user/user.component';
 
 const routes: Routes = [
   {
