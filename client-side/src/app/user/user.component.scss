@@ -1,7 +1,8 @@
 :host {
   display: flex;
   flex-direction: row;
-  min-height: 100%;
+  height: 100%;
+  overflow-y: hidden;
 
   .left-side {
     width: 60%;
@@ -15,5 +16,44 @@
 
   .right-side {
     width: 40%;
+  }
+}
+
+//Media queries for desktop
+@media (min-width: 768px) and (max-width: 1280px){
+  :host {
+    .left-side {
+      width: 50%;
+    }
+
+    .right-side {
+      width: 50%;
+    }
+  }
+}
+
+//Media queries for tablet
+@media screen and  (min-width: 600px) and(max-width: 768px){
+  :host {
+    .left-side {
+      width: 40%;
+    }
+
+    .right-side {
+      width: 60%;
+    }
+  }
+}
+
+//Media queries for smartphone
+@media screen and (max-width: 600px){
+  :host {
+    .left-side {
+     display: none;
+    }
+
+    .right-side {
+      width: 100%;
+    }
   }
 }
