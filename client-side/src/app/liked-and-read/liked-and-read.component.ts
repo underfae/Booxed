@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {AddedBook} from "../core/books/book.model";
-import {UserService} from "../core/user/user.service";
-import {ModifiedUser, User} from "../core/user/user.model";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
+
+import {AddedBook} from "../core/books/book.model";
+import {ModifiedUser, User} from "../core/user/user.model";
+import {UserService} from "../core/user/user.service";
 
 @Component({
   selector: 'app-liked-and-read',
@@ -13,10 +14,14 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class LikedAndReadComponent implements OnInit {
 
   books: AddedBook[] = []
-  user: User
   mode: string
+  user: User
 
-  constructor(protected router: Router, protected userService: UserService, protected snackBar: MatSnackBar) {
+  constructor(
+    protected router: Router,
+    protected snackBar: MatSnackBar,
+    protected userService: UserService
+  ) {
   }
 
   ngOnInit(): void {
@@ -26,7 +31,7 @@ export class LikedAndReadComponent implements OnInit {
     })
   }
 
-  initBooks() {
+  initBooks(): void {
     let url = this.router.url
     if (url === '/booxed/liked') {
       this.mode = 'liked'
@@ -39,7 +44,7 @@ export class LikedAndReadComponent implements OnInit {
     }
   }
 
-  deleteBook(id: string) {
+  deleteBook(id: string): void {
     let modifiedUser = new ModifiedUser
     modifiedUser.id = this.user._id;
     modifiedUser.points = this.user.points;
@@ -55,15 +60,15 @@ export class LikedAndReadComponent implements OnInit {
         return obj.id_book !== id;
       });
     }
-      this.userService.modifyUser(modifiedUser).subscribe(
-        () => {
-          this.snackBar.open('List succesfully updated', 'OK', {duration: 2000});
-          this.books.splice(this.books.findIndex(function (i) {
-            return i.id_book === id;
-          }), 1);
-        },
-        () => {
-          this.snackBar.open('List could not be updated', 'OK', {duration: 4000});
-        })
-    }
+    this.userService.modifyUser(modifiedUser).subscribe(
+      () => {
+        this.snackBar.open('List succesfully updated', 'OK', {duration: 2000});
+        this.books.splice(this.books.findIndex(function (i) {
+          return i.id_book === id;
+        }), 1);
+      },
+      () => {
+        this.snackBar.open('List could not be updated', 'OK', {duration: 4000});
+      })
+  }
 }
