@@ -1,3 +1,6 @@
+@import "src/colors";
+@import "src/variables";
+
 :host {
   display: flex;
   flex-direction: column;
@@ -11,11 +14,13 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    h1{
+
+    h1 {
       letter-spacing: 1px;
-      font-weight: 500;
+      font-weight: $fw-bold;
       margin: 0;
     }
+
     button {
       height: fit-content;
     }
@@ -30,10 +35,11 @@
     .mat-card {
       display: flex;
       flex-direction: row;
-      margin: 24px 0;
+      margin: $margin-regular 0;
       cursor: pointer;
+
       img {
-        margin-right: 24px;
+        margin-right: $margin-regular;
         width: 25%
       }
 
@@ -41,9 +47,10 @@
         display: flex;
         flex-direction: column;
         width: 55%;
-        margin-right: 24px;
-        .description{
-          color: #686767;
+        margin-right: $margin-regular;
+
+        .description {
+          color: $secondary-color;
         }
       }
 
@@ -53,30 +60,200 @@
         flex-direction: column;
         justify-content: space-between;
         text-align: right;
-        .books{
-          p{
-            font-weight: 500;
+
+        .books {
+          p {
+            font-weight: $fw-bold;
           }
         }
 
         i {
-          margin-left: 8px;
+          margin-left: $margin-small;
 
         }
       }
     }
   }
-  .no-items-found{
+
+  .no-items-found {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 89px;
-    i{
-      color: #FF4081;
-      margin-bottom: 24px;
+    margin-top: $margin-large-xl;
+
+    i {
+      color: $primary-color;
+      margin-bottom: $margin-regular;
     }
-    h2{
-      color: #686767;
+
+    h2 {
+      color: $secondary-color;
+    }
+  }
+}
+
+//Media queries for desktop
+@media (min-width: 769px) and (max-width: 1280px) {
+  :host {
+    .header {
+      h1 {
+        font-size: $fs-medium;
+      }
+    }
+
+    .bookshelves {
+      height: 80%;
+      width: 90%;
+
+      .mat-card {
+        margin: 0 $margin-default $margin-default 0;
+        box-sizing: border-box;
+
+        img {
+          width: 20%
+        }
+
+        .info {
+          width: 45%;
+        }
+
+        .info-actions {
+          width: 25%;
+
+          .books {
+            i {
+              margin-left: $margin-small;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Media queries for tablet
+@media screen and (min-width: 601px) and(max-width: 768px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .header {
+      height: 10%;
+
+      h1 {
+        font-size: $fs-regular;
+      }
+
+      button {
+        font-size: $fs-small;
+      }
+    }
+
+    .bookshelves {
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .mat-card {
+        margin: 0 $margin-small $margin-default 0;
+
+        img {
+          margin-right: $margin-regular;
+          width: 100px;
+          height: 65px;
+          align-self: center;
+        }
+
+        .info {
+          width: 50%;
+          margin-right: $margin-default;
+
+          .name {
+            font-size: $margin-default;
+            margin-bottom: $margin-small;
+          }
+        }
+
+        .info-actions {
+          width: 30%;
+
+          button {
+            font-size: $fs-small;
+
+            i {
+              font-size: $fs-small;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Media queries for smartphone
+@media screen and (max-width: 600px) {
+  :host {
+    .header {
+      flex-direction: column;
+      height: auto;
+      margin: $margin-default auto;
+      justify-content: normal;
+
+      h1 {
+        font-size: $fs-regular;
+        margin-bottom: $margin-small;
+      }
+    }
+
+    .bookshelves {
+      width: 90%;
+      height: 90%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin: auto;
+
+      .mat-card {
+        flex-direction: column;
+        margin: 0 $margin-small $margin-default 0;
+        cursor: pointer;
+
+        img {
+          display: none;
+        }
+
+        .info {
+          width: 100%;
+          margin-right: 0;
+
+          .name {
+            font-size: $fs-default-2;
+            font-weight: 500;
+            margin-bottom: 0;
+          }
+        }
+
+        .info-actions {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: right;
+
+          .books {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin-left: $margin-small;
+              margin-bottom: 0;
+            }
+          }
+
+          i {
+            margin-left: $margin-small;
+            font-size: $fs-small;
+          }
+        }
+      }
     }
   }
 }
