@@ -12,7 +12,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     height: 30%;
-    margin: 0 24px $margin-regular 24px;
+    margin: 0 $margin-regular $margin-regular $margin-regular;
 
     .get {
       width: 100%;
@@ -87,10 +87,18 @@
         font-size: $margin-regular;
       }
 
-      button {
-        width: 40%;
-        margin-top: $margin-small
+      .additional-points-info {
+
+        button {
+          width: 40%;
+          margin-top: $margin-small
+        }
+
+        p {
+          display: none;
+        }
       }
+
     }
   }
 
@@ -103,12 +111,152 @@
       margin: auto auto $margin-small auto;
       display: flex;
       flex-direction: row;
-      app-readonly-field{
+
+      app-readonly-field {
         width: 25%;
       }
-      .button{
+
+      .button {
         width: 25%;
         text-align: right;
+      }
+    }
+  }
+}
+
+//Media queries for desktop and tablet
+@media (min-width: 601px) and (max-width: 1280px) {
+  :host {
+    overflow-y: hidden;
+    box-sizing: border-box;
+
+    .info {
+      height: 30%;
+      margin: 0 $margin-default $margin-regular $margin-default;
+
+      .get {
+        h2 {
+          font-size: $fs-default-2;
+          margin-bottom: $margin-small;
+        }
+      }
+
+      .points {
+        .outside-circle {
+          width: 150px;
+          height: 150px;
+
+          .inside-circle {
+            width: 120px;
+            height: 120px;
+
+            .user-points {
+              margin-top: $margin-regular;
+
+              .pts {
+                font-size: $fs-large;
+                margin-bottom: 0;
+              }
+
+              .label {
+                font-size: $fs-regular;
+                margin-top: $margin-small;
+              }
+            }
+          }
+        }
+      }
+
+      .collect {
+        h2 {
+          font-size: $fs-default-2;
+          margin-bottom: $margin-small;
+        }
+
+        button {
+          width: fit-content;
+          margin-top: 0
+        }
+
+      }
+    }
+
+    .list-of-rewards {
+      margin-top: $margin-default;
+
+      mat-card {
+        width: 90%;
+        padding: $margin-small;
+      }
+    }
+  }
+}
+
+//Media queries for smartphone
+@media screen and (max-width: 600px) {
+  :host {
+    padding: $margin-small;
+
+    .info {
+      flex-direction: column;
+      justify-content: normal;
+      height: auto;
+
+      .points {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .outside-circle {
+          display: none;
+        }
+      }
+
+      .collect {
+        .additional-points-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          button {
+            margin-top: 0;
+            margin-bottom: 16 $margin-default;
+          }
+
+          p {
+            display: flex;
+            margin-bottom: 0;
+            align-self: center;
+            font-weight: 500;
+            font-size: $fs-default-2;
+            margin-left: $margin-default;
+            color: $primary-color;
+          }
+        }
+
+      }
+    }
+
+    .list-of-rewards {
+      height: auto;
+      overflow-y: inherit;
+
+      mat-card {
+        width: 90%;
+        margin: 0 auto $margin-small auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: $margin-small $margin-default;
+
+        app-readonly-field {
+          width: 50%;
+          margin-bottom: $margin-default;
+        }
+
+        .button {
+          width: 50%;
+        }
       }
     }
   }

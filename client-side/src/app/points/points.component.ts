@@ -20,11 +20,11 @@ import {UserService} from "../core/user/user.service";
 })
 export class PointsComponent implements OnInit {
 
-  user: User
-  rewards: Reward[] = []
   libraries: Library[] = []
   orders: Order[] = []
   orderToAdd = new Order;
+  rewards: Reward[] = []
+  user: User
 
   constructor(protected dialog: MatDialog,
               protected libraryService: LibraryService,
@@ -80,7 +80,7 @@ export class PointsComponent implements OnInit {
   }
 
   openOrdersDialog(): void {
-    const dialogRef = this.dialog.open(OrdersDialogComponent, {
+    this.dialog.open(OrdersDialogComponent, {
       width: '60%',
       height: 'auto',
       data: {userId: this.user._id, libraries: this.libraries, rewards: this.rewards, orders: this.orders}

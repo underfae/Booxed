@@ -20,7 +20,10 @@
     <h2> How to collect a reward?</h2>
     <p> Choose the reward from list below. Then fill in a form, select a place where you want to pick up your reward and
       click save. That's all :)</p>
-    <button mat-raised-button color="accent" (click)="openOrdersDialog()"> Your orders</button>
+    <div class="additional-points-info">
+      <button mat-raised-button color="accent" (click)="openOrdersDialog()"> Your orders</button>
+      <p> You have {{user?.points}} points </p>
+    </div>
   </div>
 </div>
 <div *ngIf="rewards?.length !== 0" class="list-of-rewards">
