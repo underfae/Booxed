@@ -21,7 +21,7 @@ export class DashboardComponent extends BookshelvesComponent {
     protected snackBar: MatSnackBar,
     protected userService: UserService,
   ) {
-    super(dialog, userService, bookshelfService, snackBar, cdr)
+    super(bookshelfService, cdr, dialog, snackBar, userService)
   }
 
 }
