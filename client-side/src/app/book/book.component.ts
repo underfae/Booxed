@@ -5,11 +5,11 @@ import {UserService} from "../core/user/user.service";
 import {ModifiedUser, User} from "../core/user/user.model";
 import {PreviewBook} from "../core/books/book.model";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {CreateBookshelfDialogComponent} from "../shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AddToBookshelfDialogComponent} from "../shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component";
-import {Bookshelf} from "../core/bookshelves/bookshelf.model";
 import {BookshelfService} from "../core/bookshelves/bookshelf.service";
+import {SharedService} from "../core/shared/shared.service";
+import {Movie} from "../core/shared/movie.model";
 
 @Component({
   selector: 'app-book',
@@ -17,7 +17,7 @@ import {BookshelfService} from "../core/bookshelves/bookshelf.service";
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-
+  movies: Movie[] = []
   book: any;
   id: string;
   user: User;
@@ -27,7 +27,8 @@ export class BookComponent implements OnInit {
               protected userService: UserService,
               protected snackBar: MatSnackBar,
               protected dialog: MatDialog,
-              protected bookshelfService: BookshelfService
+              protected bookshelfService: BookshelfService,
+              protected sharedService: SharedService
   ) {
   }
 
@@ -36,7 +37,13 @@ export class BookComponent implements OnInit {
     if (this.id) {
       this.booksService.getBookById(this.id).subscribe((result: any) => {
         this.book = result
+        if(this.book){
+          this.sharedService.getMovies(this.book.volumeInfo.title).subscribe((result: any)=>{
+            this.movies = result
+          })
+        }
       })
+
     }
     this.userService.getUserData().subscribe((result: any) => {
       this.user = result.user

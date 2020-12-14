@@ -6,6 +6,7 @@ const rewardController = require('../controllers/reward.controller')
 const orderController = require('../controllers/order.controller')
 const commentController = require('../controllers/comment.controller')
 const sharedController = require('../controllers/shared.controller')
+const moviesController = require('../controllers/movie.controller')
 const tokenHelper = require('../config/jwt.helper')
 
 const router = express.Router()
@@ -48,6 +49,6 @@ router.post('/comment/create', commentController.postComment)
 router.put('/comment/:id', commentController.modifyComment)
 
 router.get('/randomWord', sharedController.getRandomWord)
-
+router.get('/movies/:book_title', moviesController.getMovies )
 
 module.exports = router

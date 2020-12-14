@@ -41,30 +41,23 @@
       <div class="publisher-category">
         <app-readonly-field label="Publisher" content="{{book?.volumeInfo?.publisher}}"></app-readonly-field>
         <app-readonly-field label="Published date" content="{{book?.volumeInfo?.publishedDate}}"></app-readonly-field>
-        <app-readonly-field *ngIf="book?.volumeInfo?.categories " label="Category" content="{{book?.volumeInfo?.categories[0]}}"></app-readonly-field>
+        <app-readonly-field *ngIf="book?.volumeInfo?.categories " label="Category"
+                            content="{{book?.volumeInfo?.categories[0]}}"></app-readonly-field>
       </div>
     </div>
     <div class="others">
-      <a href="{{book?.volumeInfo?.infoLink}}" target="_blank">
-        <button mat-raised-button [disabled]="!book?.volumeInfo?.infoLink">Check it on Google books</button>
-      </a>
-      <div class="movies">
+
+      <div class="movies-wrapper" *ngIf="movies.length!==0">
         <h3>Movies based on this book</h3>
-        <div class="movie">
+        <div class="movies" *ngFor="let movie of movies">
           <div class="movie">
-            Title of the movie (2012)
-          </div>
-          <div class="movie">
-            Title of the movie (2012)
-          </div>
-          <div class="movie">
-            Title of the movie (2012)
-          </div>
-          <div class="movie">
-            Title of the movie (2012)
+            {{movie.movie_title}} {{movie.year}}
           </div>
         </div>
       </div>
+      <a href="{{book?.volumeInfo?.infoLink}}" target="_blank">
+        <button mat-raised-button [disabled]="!book?.volumeInfo?.infoLink">Check it on Google books</button>
+      </a>
     </div>
   </div>
 </div>

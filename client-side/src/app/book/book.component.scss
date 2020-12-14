@@ -12,7 +12,7 @@
     margin-top: -24px;
     margin-bottom: -24px;
     background-color: #686767;
-    border-radius: 0 35px  35px 0;
+    border-radius: 0 35px 35px 0;
   }
 
   .book {
@@ -46,6 +46,7 @@
           transition-duration: 0.2s;
           transition-timing-function: linear;
         }
+
         i:hover {
           font-size: 40px;
           cursor: pointer;
@@ -127,6 +128,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
     .more-details {
       display: flex;
       flex-direction: row;
@@ -140,12 +142,13 @@
         margin-bottom: 8px;
         font-size: 16px;
         font-style: italic;
-        ::ng-deep{
-          label{
+
+        ::ng-deep {
+          label {
             font-size: 14px;
             font-style: normal;
             font-weight: 500;
-            color:#FF4081;
+            color: #FF4081;
           }
         }
       }
@@ -157,7 +160,8 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      button{
+
+      button {
         width: fit-content;
       }
 
@@ -174,4 +178,133 @@
   }
 }
 
+//Media queries for desktop
+@media (min-width: 769px) and (max-width: 1280px) {
+  :host {
+    .book {
+      .book-details {
+        height: 65%;
+        .title {
+          height: 5%;
+          margin: 24px auto 8px auto;
+
+          h1 {
+            font-size: 18px;
+          }
+
+          i {
+            font-size: 18px !important;
+          }
+        }
+
+        .book-main-info {
+          width: 90%;
+          height: 80%;
+
+          .image {
+            width: 35%;
+
+            img {
+              width: 130px;
+            }
+          }
+
+          .info {
+            width: 65%;
+          }
+
+          mat-progress-bar {
+            margin-top: 8px;
+            margin-bottom: 16px;
+          }
+
+          .book-title {
+            font-size: 24px;
+            margin-bottom: 16px;
+          }
+
+          .authors {
+            margin-top: 8px;
+            margin-bottom: 0;
+
+            .book-author {
+              font-size: 16px;
+              margin-bottom: 8px;
+            }
+          }
+
+          .book-description {
+            font-size: 12px;
+          }
+
+          .buttons {
+            margin-top: 16px;
+            button {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+
+    .more {
+      height: 30%;
+      margin: 0 0 0 3%;
+      width: 95%;
+      box-sizing: border-box;
+      .more-details {
+        width: 60%;
+        .publisher-category {
+          margin-left: 16px;
+        }
+
+        app-readonly-field {
+          margin-bottom: 4px;
+          ::ng-deep {
+            label {
+              font-size: 12px !important;
+            }
+            .content{
+              font-size: 12px !important;
+            }
+          }
+        }
+
+      }
+
+      .others {
+        width: 40%;
+        align-items: center;
+        button {
+          font-size: 12px;
+        }
+
+        .movies-wrapper {
+          margin-top: 0px;
+          margin-bottom: 8px;
+          h3 {
+            font-size: 12px;
+            margin-bottom: 0;
+          }
+
+          .movies{
+            height: 85px;
+            overflow-y: auto;
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+  //Media queries for tablet
+@media screen and (min-width: 601px) and(max-width: 768px) {
+
+}
+
+  //Media queries for smartphone
+  @media screen and (max-width: 600px) {
+
+  }
 

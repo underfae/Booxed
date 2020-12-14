@@ -13,4 +13,7 @@ export class SharedService {
     return this.http.get(environment.apiBaseUrl + '/randomWord');
   }
 
+  getMovies(title: string){
+    return this.http.get(environment.apiBaseUrl + '/movies/'+ encodeURIComponent(title));
+  }
 }
