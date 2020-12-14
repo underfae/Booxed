@@ -1,4 +1,4 @@
-import {AddedBook} from "../books/book.model";
+import {PreviewBook} from "../books/book.model";
 
 export class Bookshelf {
   _id: string;
@@ -6,5 +6,5 @@ export class Bookshelf {
   description: string;
   id_user: string;
   creation_date: Date;
-  books: AddedBook[];
+  books: PreviewBook[];
 }

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 
-import {AddedBook} from "../core/books/book.model";
+import {PreviewBook} from "../core/books/book.model";
 import {ModifiedUser, User} from "../core/user/user.model";
 import {UserService} from "../core/user/user.service";
 
@@ -13,7 +13,7 @@ import {UserService} from "../core/user/user.service";
 })
 export class LikedAndReadComponent implements OnInit {
 
-  books: AddedBook[] = []
+  books: PreviewBook[] = []
   mode: string
   user: User
 
@@ -51,12 +51,12 @@ export class LikedAndReadComponent implements OnInit {
 
     if (this.mode === 'liked') {
       modifiedUser.read = this.user.read;
-      modifiedUser.liked = this.user.liked.filter(function (obj: AddedBook) {
+      modifiedUser.liked = this.user.liked.filter(function (obj: PreviewBook) {
         return obj.id_book !== id;
       });
     } else if (this.mode === 'read') {
       modifiedUser.liked = this.user.liked;
-      modifiedUser.read = this.user.read.filter(function (obj: AddedBook) {
+      modifiedUser.read = this.user.read.filter(function (obj: PreviewBook) {
         return obj.id_book !== id;
       });
     }

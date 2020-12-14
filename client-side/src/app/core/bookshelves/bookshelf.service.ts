@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {environment} from "src/environments/environment";
 import {Bookshelf} from "./bookshelf.model";
-import {AddedBook} from "../books/book.model";
+import {PreviewBook} from "../books/book.model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class BookshelfService {
     return this.http.delete(environment.apiBaseUrl + "/bookshelf/"+ id)
   }
 
-  addBookToBookshelf(book:AddedBook, id: string) {
+  addBookToBookshelf(book:PreviewBook, id: string) {
     return this.http.put(environment.apiBaseUrl + "/bookshelf/add/" + id, book)
   }
 

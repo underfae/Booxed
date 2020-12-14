@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {BooksService} from "../core/books/books.service";
 import {UserService} from "../core/user/user.service";
 import {ModifiedUser, User} from "../core/user/user.model";
-import {AddedBook} from "../core/books/book.model";
+import {PreviewBook} from "../core/books/book.model";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {CreateBookshelfDialogComponent} from "../shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
@@ -74,12 +74,12 @@ export class BookComponent implements OnInit {
 
   addToBookshelf(id: string[]){
     id.forEach((id:string)=> {
-      let addedBook = new AddedBook;
-      addedBook.id_book = this.book?.id;
-      addedBook.image = this.book.volumeInfo.imageLinks.smallThumbnail;
-      addedBook.authors =this.book.volumeInfo.authors;
-      addedBook.title = this.book.volumeInfo.title;
-      this.bookshelfService.addBookToBookshelf(addedBook, id).subscribe(
+      let previewBook = new PreviewBook;
+      previewBook.id_book = this.book?.id;
+      previewBook.image = this.book.volumeInfo.imageLinks.smallThumbnail;
+      previewBook.authors =this.book.volumeInfo.authors;
+      previewBook.title = this.book.volumeInfo.title;
+      this.bookshelfService.addBookToBookshelf(previewBook, id).subscribe(
         ((result:any)=>{
           console.log(result)
         })
@@ -89,7 +89,7 @@ export class BookComponent implements OnInit {
 
   addToLikedOrRead(action: string) {
     const modifiedUser = new ModifiedUser;
-    const newBook = new AddedBook;
+    const newBook = new PreviewBook;
 
     newBook.id_book = this.book?.id
     newBook.authors = this.book?.volumeInfo?.authors

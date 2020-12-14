@@ -1,4 +1,4 @@
-export class AddedBook{
+export class PreviewBook{
   id_book: string
   authors: string
   title: string
