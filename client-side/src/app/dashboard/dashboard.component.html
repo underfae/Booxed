@@ -33,14 +33,12 @@
       <button mat-raised-button  [routerLink]="['/booxed/search']" class="find">Find a book</button>
     </div>
   </div>
-  <div class="random-books">
+  <div class="random-books" >
     <h2> Random Books </h2>
     <div class="carousel">
-      <app-book-preview></app-book-preview>
-      <app-book-preview></app-book-preview>
-      <app-book-preview></app-book-preview>
-      <app-book-preview></app-book-preview>
-      <app-book-preview></app-book-preview>
-      <app-book-preview></app-book-preview>
+      <ng-container *ngFor="let book of dailyBooks">
+        <app-book-preview bookId="{{book?.id}}" author="{{book?.volumeInfo?.authors}}"
+                          title="{{book?.volumeInfo?.title}}" image="{{book?.volumeInfo?.imageLinks?.smallThumbnail}}"></app-book-preview>
+      </ng-container>
     </div>
   </div>
