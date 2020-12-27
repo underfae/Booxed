@@ -1,0 +1,123 @@
+<mat-tab-group color="accent" mat-align-tabs="center" dynamicHeight>
+  <mat-tab label="Libraries">
+    <div class="libraries" *ngIf="libraries?.length !== 0">
+      <mat-expansion-panel *ngFor="let library of libraries">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <app-readonly-field
+              label="Name"
+              content="{{ library?.name }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="City"
+              content="{{ library?.city }}"
+            ></app-readonly-field>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="content">
+          <div class="more-info">
+            <app-readonly-field
+              label="Street"
+              content="{{ library?.street }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Apartment number"
+              content="{{ library?.apartment_number }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Building number"
+              content="{{ library?.building_number }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Telephone"
+              content="{{ library?.telephone }}"
+            ></app-readonly-field>
+          </div>
+          <div class="buttons">
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="deleteLibrary(library?._id)"
+            >
+              Delete Library
+            </button>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <ng-container *ngIf="libraries?.length === 0"> </ng-container>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Add New Library">
+    <form [formGroup]="newLibrary" (ngSubmit)="addLibrary()">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" required />
+        <mat-error *ngIf="newLibrary.get('name').hasError('required')"
+          >Name is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input matInput type="text" formControlName="city" required />
+        <mat-error *ngIf="newLibrary.get('city').hasError('required')"
+          >City is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Street</mat-label>
+        <input matInput type="text" formControlName="street" required />
+        <mat-error *ngIf="newLibrary.get('street').hasError('required')"
+          >Street is required</mat-error
+        >
+      </mat-form-field>
+      <div class="building-apartment">
+        <mat-form-field>
+          <mat-label> Building Number</mat-label>
+          <input
+            matInput
+            type="number"
+            formControlName="building_number"
+            required
+          />
+          <mat-error
+            *ngIf="newLibrary.get('building_number').hasError('required')"
+            >Building Number is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label> Apartment Number</mat-label>
+          <input
+            matInput
+            type="number"
+            formControlName="apartment_number"
+            required
+          />
+          <mat-error
+            *ngIf="newLibrary.get('apartment_number').hasError('required')"
+            >Apartment Number is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <mat-label> Telephone</mat-label>
+        <input matInput type="text" formControlName="telephone" required />
+        <mat-error *ngIf="newLibrary.get('telephone').hasError('required')"
+          >Telephone is required</mat-error
+        >
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit"
+        [disabled]="!newLibrary.valid"
+      >
+        Add Library
+      </button>
+    </form>
+  </mat-tab>
+</mat-tab-group>
