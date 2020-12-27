@@ -1,4 +1,4 @@
-export class Order{
+export class Order {
   _id: string;
   name: string;
   surname: string;
@@ -8,4 +8,5 @@ export class Order{
   id_reward: string;
   id_user: string;
   status: string;
+  points: number;
 }
