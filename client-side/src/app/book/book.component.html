@@ -2,30 +2,44 @@
   <div class="book-details">
     <div class="title">
       <h1>BOOK DETAILS</h1>
-      <i class="far fa-heart" *ngIf="!checkIfLikedOrRead('liked')" (click)="addToLikedOrRead('liked')"></i>
+      <i
+        class="far fa-heart"
+        *ngIf="!checkIfLikedOrRead('liked')"
+        (click)="addToLikedOrRead('liked')"
+      ></i>
       <i class="fas fa-heart" *ngIf="checkIfLikedOrRead('liked')"></i>
     </div>
     <div class="book-main-info">
       <div class="image">
-        <img src="{{book?.volumeInfo?.imageLinks?.smallThumbnail}}">
+        <img src="{{ book?.volumeInfo?.imageLinks?.smallThumbnail }}" />
       </div>
       <div class="info">
         <div class="ratings" *ngIf="book?.volumeInfo?.averageRating">
           <label>Online ratings</label>
-          <mat-progress-bar mode="determinate" value="{{getRatingValue(book?.volumeInfo?.averageRating)}}"
-                            color="accent"></mat-progress-bar>
+          <mat-progress-bar
+            mode="determinate"
+            value="{{ getRatingValue(book?.volumeInfo?.averageRating) }}"
+            color="accent"
+          ></mat-progress-bar>
         </div>
-        <div class="book-title"> {{book?.volumeInfo?.title}}</div>
+        <div class="book-title">{{ book?.volumeInfo?.title }}</div>
         <div class="authors">
           <div *ngFor="let author of book?.volumeInfo?.authors">
-            <div class="book-author"> {{author}}</div>
+            <div class="book-author">{{ author }}</div>
           </div>
         </div>
-        <div class="book-description"> {{book?.volumeInfo?.description}}</div>
+        <div class="book-description">{{ book?.volumeInfo?.description }}</div>
         <div class="buttons">
-          <button mat-raised-button color="accent" (click)="openDialog()"> Add to bookshelf</button>
-          <button mat-raised-button color="accent" [disabled]="checkIfLikedOrRead('read')"
-                  (click)="addToLikedOrRead('read')"> Mark as read
+          <button mat-raised-button color="accent" (click)="openDialog()">
+            Add to bookshelf
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            [disabled]="checkIfLikedOrRead('read')"
+            (click)="addToLikedOrRead('read')"
+          >
+            Mark as read
           </button>
         </div>
       </div>
@@ -34,33 +48,50 @@
   <div class="more">
     <div class="more-details">
       <div class="pages-language">
-        <app-readonly-field label="Pages" content="{{book?.volumeInfo?.pageCount}}"></app-readonly-field>
-        <app-readonly-field label="Language" content="{{book?.volumeInfo?.language}}"></app-readonly-field>
-        <app-readonly-field label="Maturity Rating" content="{{book?.volumeInfo?.maturityRating}}"></app-readonly-field>
+        <app-readonly-field
+          label="Pages"
+          content="{{ book?.volumeInfo?.pageCount }}"
+        ></app-readonly-field>
+        <app-readonly-field
+          label="Language"
+          content="{{ book?.volumeInfo?.language }}"
+        ></app-readonly-field>
+        <app-readonly-field
+          label="Maturity Rating"
+          content="{{ book?.volumeInfo?.maturityRating }}"
+        ></app-readonly-field>
       </div>
       <div class="publisher-category">
-        <app-readonly-field label="Publisher" content="{{book?.volumeInfo?.publisher}}"></app-readonly-field>
-        <app-readonly-field label="Published date" content="{{book?.volumeInfo?.publishedDate}}"></app-readonly-field>
-        <app-readonly-field *ngIf="book?.volumeInfo?.categories " label="Category"
-                            content="{{book?.volumeInfo?.categories[0]}}"></app-readonly-field>
+        <app-readonly-field
+          label="Publisher"
+          content="{{ book?.volumeInfo?.publisher }}"
+        ></app-readonly-field>
+        <app-readonly-field
+          label="Published date"
+          content="{{ book?.volumeInfo?.publishedDate }}"
+        ></app-readonly-field>
+        <app-readonly-field
+          *ngIf="book?.volumeInfo?.categories"
+          label="Category"
+          content="{{ book?.volumeInfo?.categories[0] }}"
+        ></app-readonly-field>
       </div>
     </div>
     <div class="others">
-
-      <div class="movies-wrapper" *ngIf="movies.length!==0">
+      <div class="movies-wrapper" *ngIf="movies.length !== 0">
         <h3>Movies based on this book</h3>
         <div class="movies" *ngFor="let movie of movies">
-          <div class="movie">
-            {{movie.movie_title}} {{movie.year}}
-          </div>
+          <div class="movie">{{ movie.movie_title }} {{ movie.year }}</div>
         </div>
       </div>
-      <a href="{{book?.volumeInfo?.infoLink}}" target="_blank">
-        <button mat-raised-button [disabled]="!book?.volumeInfo?.infoLink">Check it on Google books</button>
+      <a href="{{ book?.volumeInfo?.infoLink }}" target="_blank">
+        <button mat-raised-button [disabled]="!book?.volumeInfo?.infoLink">
+          Check it on Google books
+        </button>
       </a>
     </div>
   </div>
 </div>
 <div class="comments">
-  <app-comments-section id_book="{{id}}" id_user="{{user?._id}}"></app-comments-section>
+  <app-comments-section id_book="{{ id }}" [user]="user"></app-comments-section>
 </div>
