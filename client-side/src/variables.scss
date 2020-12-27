@@ -18,6 +18,7 @@ $margin-large: 40px;
 $margin-medium: 33px;
 $margin-regular: 24px;
 $margin-default: 16px;
+$margin-default_2: 12px;
 $margin-small: 8px;
 $margin-half-small: 4px;
 
@@ -26,6 +27,12 @@ $br-regular: 35px;
 $br-default: 20px;
 $br-small: 10px;
 
+// images ---------------------------------------------------
+$img-big: 200px;
+$img-medium: 150px;
+$img-regular: 130px;
+$img-small: 100px;
+
 // dimensions -----------------------------------------------
 $logo-big: 150px;
 $logo-medium: 120px;
@@ -33,10 +40,17 @@ $logo-small: 100px;
 $navbar-element-height-hover: 10px;
 $navbar-element-height-big: 50px;
 $navbar-element-height-small: 30px;
+$navbar-separator-height: 100px;
+$textarea-comments-height: 100px;
+$mat-expansion-header-height: 50px;
 
+//desktop
+$desktop-navbar-separator-height: 60px;
+$desktop-textarea-comments-height: 70px;
 
 // mobile
 $mobile-navbar-height: 60px;
+$mobile-navbar-separator-height: 80px;
 
 // tablet
-$tablet-navbar-height: 90px
+$tablet-navbar-height: 90px;
