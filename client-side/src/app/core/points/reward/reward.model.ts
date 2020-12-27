@@ -1,6 +1,11 @@
-export class Reward{
+export class Reward {
   _id: string;
   name: string;
   points: number;
-  libraries: string[];
+  libraries: LibraryPreview[];
+}
+
+export class LibraryPreview {
+  id_library: string;
+  name: string;
 }

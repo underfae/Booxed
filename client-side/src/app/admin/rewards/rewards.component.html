@@ -1,0 +1,85 @@
+<mat-tab-group color="accent" mat-align-tabs="center" dynamicHeight>
+  <mat-tab label="Rewards">
+    <div class="rewards" *ngIf="rewards?.length !== 0">
+      <mat-expansion-panel *ngFor="let reward of rewards">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <app-readonly-field
+              label="Name"
+              content="{{ reward?.name }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Points"
+              content="{{ reward?.points }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Availability"
+              content="{{ reward?.libraries.length }}"
+            ></app-readonly-field>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="content">
+          <div class="libraries" *ngIf="reward?.libraries.length !== 0">
+            <label>Available in: </label>
+            <div *ngFor="let library of reward?.libraries">
+              {{ library?.name }}
+            </div>
+          </div>
+          <div class="no-libraries" *ngIf="reward?.libraries.length === 0">
+            Rewards is not available
+          </div>
+          <div class="buttons">
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="deleteReward(reward?._id)"
+            >
+              Delete Reward
+            </button>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <ng-container *ngIf="rewards?.length === 0"> </ng-container>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Add New Reward">
+    <form [formGroup]="newReward" (ngSubmit)="addReward()">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" required />
+        <mat-error *ngIf="newReward.get('name').hasError('required')"
+          >Name is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Points</mat-label>
+        <input matInput type="number" formControlName="points" required />
+        <mat-error *ngIf="newReward.get('points').hasError('required')"
+          >Points are required</mat-error
+        >
+      </mat-form-field>
+      <div class="available-libraries" *ngIf="choosedLibraries.length !== 0">
+        <p>Reward will be available in:</p>
+        <div class="library" *ngFor="let library of choosedLibraries">
+          {{ library.name }}
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button mat-raised-button type="button" (click)="addLibraries()">
+          Add libraries
+        </button>
+        <button
+          mat-raised-button
+          color="accent"
+          type="submit"
+          [disabled]="!newReward.valid"
+        >
+          Add Reward
+        </button>
+      </div>
+    </form>
+  </mat-tab>
+</mat-tab-group>
