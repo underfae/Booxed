@@ -1,4 +1,4 @@
-import {PreviewBook} from "../books/book.model";
+import { PreviewBook } from '../books/book.model';
 
 export class User {
   _id: string;
@@ -10,13 +10,15 @@ export class User {
   points: number;
   liked: PreviewBook[];
   read: PreviewBook[];
+  role: string;
+  resetLink: string;
 }
 
 export class LoggedUser {
   username: string;
   password: string;
 }
-export class ModifiedUser{
+export class ModifiedUser {
   id: string;
   liked: PreviewBook[];
   read: PreviewBook[];
