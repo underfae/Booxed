@@ -1,5 +1,8 @@
+@import "src/variables";
+@import "src/colors";
+
 :host {
-  padding: 40px 0;
+  padding: $margin-large 0;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,25 +12,25 @@
   .add-comment {
     height: 45%;
     .title {
-      font-size: 24px;
-      font-weight: 500;
-      margin-left: 24px;
+      font-size: $margin-regular;
+      font-weight: $fw-bold;
+      margin-left: $margin-regular;
     }
 
     form {
       display: flex;
       flex-direction: column;
       width: 100%;
-      margin: 16px auto;
+      margin: $margin-default auto;
 
       mat-form-field {
-        background-color: rgba(255, 255, 255, 0.5);
-        padding: 16px;
-        margin-bottom: 34px;
-        margin-top: 34px;
+        background-color: $comments-textarea-background-color;
+        padding: $margin-default;
+        margin-bottom: $margin-medium;
+        margin-top: $margin-medium;
 
         textarea {
-          height: 100px;
+          height: $textarea-comments-height;
           color: black;
         }
       }
@@ -39,71 +42,123 @@
     }
   }
   .comments-section-title {
-    font-size: 16px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 16px;
-    margin-top: 24px;
-    margin-left: 24px;
+    font-size: $fs-default-2;
+    font-weight: $fw-bold;
+    color: $comments-textarea-background-color;
+    margin-bottom: $margin-default;
+    margin-top: $margin-regular;
+    margin-left: $margin-regular;
   }
   .comments-list {
     height: 50%;
     overflow-y: auto;
     .comment {
-      background-color: rgba(255, 255, 255, 0.3);
-      padding: 16px;
+      background-color: $comment-background-color;
+      padding: $margin-default;
       display: flex;
       flex-direction: column;
-      margin-bottom: 24px;
+      margin-bottom: $margin-regular;
 
       .comment-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 8px;
+        margin-bottom: $margin-small;
 
         .date {
           font-style: italic;
-          font-weight: 500;
-          font-size: 12px;
+          font-weight: $fw-bold;
+          font-size: $fs-small;
         }
 
         .actions {
           i {
-            margin-left: 8px;
+            margin-left: $margin-small;
             transition-property: font-size;
             transition-duration: 0.2s;
             transition-timing-function: linear;
           }
 
           .report {
-            color: #FF4081;
+            color: $primary-color;
           }
 
           .like {
-            color: #0089ff;
+            color: $like-color;
           }
 
           .delete {
-            color: #FF4081;
+            color: $primary-color;
           }
         }
 
         i:hover {
-          font-size: 16px;
+          font-size: $fs-default-2;
           cursor: pointer;
         }
       }
-
     }
   }
 
   .no-comments {
     margin: auto;
     width: 80%;
-    font-size: 16px;
-    color: #B4B3B3;
-    font-weight: 500;
+    font-size: $fs-default-2;
+    color: $no-comments;
+    font-weight: $fw-bold;
     text-align: center;
+  }
+}
+
+//mediaqueries for desktop
+@media (min-width: 769px) and (max-width: 1280px) {
+  :host {
+    padding: $margin-regular 0;
+
+    .add-comment {
+      height: 50%;
+
+      .title {
+        font-size: $fs-default-2;
+      }
+
+      form {
+        margin: $margin-small auto;
+
+        mat-form-field {
+          padding: $margin-default;
+          margin-bottom: $margin-small;
+          margin-top: $margin-small;
+
+          textarea {
+            height: $desktop-textarea-comments-height;
+          }
+        }
+
+        button {
+          font-size: $fs-small;
+        }
+      }
+    }
+
+    .comments-section-title {
+      font-size: $fs-default-2;
+      font-weight: $fw-bold;
+      color: $comments-textarea-background-color;
+      margin-bottom: $margin-default;
+      margin-top: $margin-regular;
+      margin-left: $margin-regular;
+      height: 5%;
+    }
+  }
+}
+
+//Media queries for tablet
+@media screen and (min-width: 601px) and(max-width: 768px) {
+  :host {
+    padding: $margin-regular 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
 }

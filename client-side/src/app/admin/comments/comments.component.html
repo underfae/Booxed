@@ -1,0 +1,44 @@
+<h1>Comments</h1>
+<div class="comments" *ngIf="comments?.length !== 0">
+  <mat-expansion-panel *ngFor="let comment of comments">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <app-readonly-field
+          label="User ID"
+          content="{{ comment?.id_user }}"
+        ></app-readonly-field>
+        <app-readonly-field
+          label="Book ID"
+          content="{{ comment?.id_book }}"
+        ></app-readonly-field>
+        <app-readonly-field
+          label="Date of posting"
+          content="{{ comment?.dateOfPosting | date: 'yyyy-MM-dd' }}"
+        ></app-readonly-field>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="content">
+      <div class="comment">{{ comment?.commentText }}</div>
+      <div class="more-info">
+        <app-readonly-field
+          label="Likes"
+          content="{{ comment?.reports?.length }}"
+        ></app-readonly-field>
+        <app-readonly-field
+          label="Reports"
+          content="{{ comment?.likes?.length }}"
+        ></app-readonly-field>
+      </div>
+      <div class="button">
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="deleteComment(comment?._id, comment?.id_user)"
+        >
+          Delete comment
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <ng-container *ngIf="comments?.length === 0"> </ng-container>
+</div>

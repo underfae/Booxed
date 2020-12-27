@@ -1,0 +1,46 @@
+@import "src/variables";
+@import "src/colors";
+
+:host {
+  box-sizing: border-box;
+  padding: $margin-default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  h1 {
+    height: 10%;
+  }
+  .comments {
+    height: 90%;
+    overflow-y: auto;
+    mat-expansion-panel {
+      margin-bottom: $margin-default;
+      mat-expansion-panel-header {
+        height: $mat-expansion-header-height;
+        mat-panel-title {
+          justify-content: space-between;
+          margin-right: $margin-large-xl;
+        }
+      }
+      .content {
+        margin-top: $margin-default;
+        display: flex;
+        .comment {
+          font-style: italic;
+          color: $secondary-color;
+          width: 50%;
+        }
+        .more-info {
+          display: flex;
+          flex-direction: row;
+          width: 25%;
+          justify-content: space-evenly;
+        }
+        .button {
+          width: 25%;
+          text-align: end;
+        }
+      }
+    }
+  }
+}
