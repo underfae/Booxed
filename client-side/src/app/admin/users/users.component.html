@@ -1,0 +1,129 @@
+<mat-tab-group color="accent" mat-align-tabs="center" dynamicHeight>
+  <mat-tab label="Users">
+    <div class="users" *ngIf="users?.length !== 0">
+      <mat-expansion-panel *ngFor="let user of users">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <app-readonly-field
+              label="Name"
+              content="{{ user?.name }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Surname"
+              content="{{ user?.surname }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Username"
+              content="{{ user?.username }}"
+            ></app-readonly-field>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="content">
+          <div class="more-info">
+            <app-readonly-field
+              label="e-mail"
+              content="{{ user?.email }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Points"
+              content="{{ user?.points }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Liked"
+              content="{{ user?.liked?.length }}"
+            ></app-readonly-field>
+            <app-readonly-field
+              label="Read"
+              content="{{ user?.read?.length }}"
+            ></app-readonly-field>
+          </div>
+          <div class="buttons">
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="deleteUser(user?._id)"
+            >
+              Delete user
+            </button>
+            <button mat-raised-button (click)="openMessageDialog(user?.email)">
+              Send message to user
+            </button>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <ng-container *ngIf="users?.length === 0"> </ng-container>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Add New User">
+    <form [formGroup]="newUser" (ngSubmit)="addUser()">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" required />
+        <mat-error *ngIf="newUser.get('name').hasError('required')"
+          >Name is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Surname</mat-label>
+        <input matInput type="text" formControlName="surname" required />
+        <mat-error *ngIf="newUser.get('surname').hasError('required')"
+          >Surname is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" formControlName="username" required />
+        <mat-error *ngIf="newUser.get('username').hasError('required')"
+          >Username is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput type="email" formControlName="email" required />
+        <mat-error *ngIf="newUser.get('email').hasError('required')"
+          >E-mail is required</mat-error
+        >
+        <mat-error *ngIf="newUser.get('email').hasError('email')"
+          >Invalid email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          formControlName="password"
+          #password
+          required
+        />
+        <i
+          matTooltip="Password must have 8 characters and contain one special character, one uppercase letter, one lowercase letter and one number!"
+          class="far fa-question-circle"
+        ></i>
+        <mat-error *ngIf="newUser.get('password').hasError('required')"
+          >Password is required!</mat-error
+        >
+        <mat-error *ngIf="newUser.get('password').hasError('pattern')"
+          >Password must follow the specified patttern!</mat-error
+        >
+      </mat-form-field>
+
+      <mat-checkbox color="primary" #terms required
+        >I agree with terms and conditions*</mat-checkbox
+      >
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit"
+        [disabled]="!newUser.valid || !terms.checked"
+      >
+        Add User
+      </button>
+    </form>
+  </mat-tab>
+</mat-tab-group>
