@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Send message to user</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="form">
+    <mat-form-field>
+      <mat-label>Subject</mat-label>
+      <input matInput type="text" [(ngModel)]="subject" required />
+      <mat-error *ngIf="!subject">Subject is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Message</mat-label>
+      <textarea matInput type="text" [(ngModel)]="text" required></textarea>
+      <mat-error *ngIf="!text">Message is required</mat-error>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancel</button>
+  <button
+    mat-raised-button
+    color="accent"
+    [disabled]="!text || !subject"
+    [mat-dialog-close]="{ text: text, subject: subject }"
+  >
+    Send message
+  </button>
+</mat-dialog-actions>
