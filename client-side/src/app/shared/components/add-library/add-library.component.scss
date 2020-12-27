@@ -1,0 +1,12 @@
+@import "src/variables";
+@import "src/colors";
+
+mat-dialog-content {
+  height: 260px;
+  overflow-y: auto;
+}
+.address {
+  color: $secondary-color;
+  font-style: italic;
+  font-size: $fs-small !important;
+}

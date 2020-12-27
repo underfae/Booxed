@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>ADD LIBRARIES TO NEW REWARD</h2>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="data.libraries?.length !== 0">
+    <mat-selection-list [(ngModel)]="selectedLibraries">
+      <mat-list-option
+        *ngFor="let el of data.libraries"
+        [value]="{ id_library: el?._id, name: el?.name }"
+      >
+        {{ el?.name }}
+        <p class="address">
+          {{ el?.street }} {{ el?.building_number }} /
+          {{ el?.apartment_number }}
+          {{ el?.city }}
+        </p>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+
+  <ng-container *ngIf="data.libraries?.length === 0">
+    <app-no-items-found text="No libraries yet"> </app-no-items-found>
+  </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button
+    mat-raised-button
+    color="accent"
+    [mat-dialog-close]="selectedLibraries"
+  >
+    Add
+  </button>
+</mat-dialog-actions>
