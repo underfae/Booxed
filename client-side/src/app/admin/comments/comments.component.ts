@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { CommentService } from '../../core/comment/comment.service';
-import { Comment } from '../../core/comment/comment.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { Comment } from '../../core/comment/comment.model';
+import { CommentService } from '../../core/comment/comment.service';
 import { SharedService } from '../../core/shared/shared.service';
-import { UserService } from '../../core/user/user.service';
 import { User } from '../../core/user/user.model';
+import { UserService } from '../../core/user/user.service';
 
 @Component({
   selector: 'app-comments',

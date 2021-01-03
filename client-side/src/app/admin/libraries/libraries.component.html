@@ -44,7 +44,7 @@
           </div>
         </div>
       </mat-expansion-panel>
-      <ng-container *ngIf="libraries?.length === 0"> </ng-container>
+      <ng-container *ngIf="libraries?.length === 0"></ng-container>
     </div>
   </mat-tab>
 
@@ -54,24 +54,24 @@
         <mat-label>Name</mat-label>
         <input matInput type="text" formControlName="name" required />
         <mat-error *ngIf="newLibrary.get('name').hasError('required')"
-          >Name is required</mat-error
-        >
+          >Name is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>City</mat-label>
         <input matInput type="text" formControlName="city" required />
         <mat-error *ngIf="newLibrary.get('city').hasError('required')"
-          >City is required</mat-error
-        >
+          >City is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Street</mat-label>
         <input matInput type="text" formControlName="street" required />
         <mat-error *ngIf="newLibrary.get('street').hasError('required')"
-          >Street is required</mat-error
-        >
+          >Street is required
+        </mat-error>
       </mat-form-field>
       <div class="building-apartment">
         <mat-form-field>
@@ -84,8 +84,8 @@
           />
           <mat-error
             *ngIf="newLibrary.get('building_number').hasError('required')"
-            >Building Number is required</mat-error
-          >
+            >Building Number is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -98,16 +98,16 @@
           />
           <mat-error
             *ngIf="newLibrary.get('apartment_number').hasError('required')"
-            >Apartment Number is required</mat-error
-          >
+            >Apartment Number is required
+          </mat-error>
         </mat-form-field>
       </div>
       <mat-form-field>
         <mat-label> Telephone</mat-label>
         <input matInput type="text" formControlName="telephone" required />
         <mat-error *ngIf="newLibrary.get('telephone').hasError('required')"
-          >Telephone is required</mat-error
-        >
+          >Telephone is required
+        </mat-error>
       </mat-form-field>
 
       <button

@@ -1,11 +1,11 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { Comment, UpdatedComment } from '../../../core/comment/comment.model';
 import { CommentService } from '../../../core/comment/comment.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserService } from '../../../core/user/user.service';
-import { ModifiedUser, User } from '../../../core/user/user.model';
 import { SharedService } from '../../../core/shared/shared.service';
+import { User } from '../../../core/user/user.model';
 
 @Component({
   selector: 'app-comments-section',
@@ -17,6 +17,10 @@ export class CommentsSectionComponent implements OnInit {
   @Input() user: User;
 
   comments = [];
+
+  newComment = new FormGroup({
+    commentText: new FormControl('', [Validators.maxLength(500)]),
+  });
 
   constructor(
     protected commentService: CommentService,
@@ -31,11 +35,7 @@ export class CommentsSectionComponent implements OnInit {
     });
   }
 
-  newComment = new FormGroup({
-    commentText: new FormControl('', [Validators.maxLength(500)]),
-  });
-
-  addComment() {
+  addComment(): void {
     const comment = new Comment();
     comment.commentText = this.newComment.value.commentText;
     comment.id_book = this.id_book;
@@ -59,7 +59,7 @@ export class CommentsSectionComponent implements OnInit {
     );
   }
 
-  reportUnreportComment(comment: Comment, action: string) {
+  reportUnreportComment(comment: Comment, action: string): void {
     let modifiedComment = new UpdatedComment();
     modifiedComment.likes = comment.likes;
     modifiedComment.commentText = comment.commentText;
@@ -84,7 +84,7 @@ export class CommentsSectionComponent implements OnInit {
     );
   }
 
-  likeUnlikeComment(comment: Comment, action: string) {
+  likeUnlikeComment(comment: Comment, action: string): void {
     let modifiedComment = new UpdatedComment();
     modifiedComment.reports = comment?.reports;
     modifiedComment.commentText = comment?.commentText;
@@ -110,7 +110,7 @@ export class CommentsSectionComponent implements OnInit {
     );
   }
 
-  checkIfReportedOrLiked(comment: Comment, action: string) {
+  checkIfReportedOrLiked(comment: Comment, action: string): string {
     if (comment) {
       if (action === 'reported') {
         return comment.reports.find((x) => x === this.user._id);
@@ -120,7 +120,7 @@ export class CommentsSectionComponent implements OnInit {
     }
   }
 
-  deleteComment(id: string) {
+  deleteComment(id: string): void {
     if (id) {
       this.commentService.deleteComment(id).subscribe(
         () => {

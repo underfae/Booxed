@@ -1,21 +1,25 @@
 <h2 mat-dialog-title>ADD TO BOOKSHELVES</h2>
 <mat-dialog-content class="mat-typography">
-  <div *ngIf="bookshelves?.length!==0">
-      <mat-selection-list [(ngModel)]="selectedBookshelves" >
-        <mat-list-option *ngFor="let el of bookshelves" [value]="el?._id">
-          {{el?.name}}
-        </mat-list-option>
-      </mat-selection-list>
-    </div>
+  <div *ngIf="bookshelves?.length !== 0">
+    <mat-selection-list [(ngModel)]="selectedBookshelves">
+      <mat-list-option *ngFor="let el of bookshelves" [value]="el?._id">
+        {{ el?.name }}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
 
-  <ng-container *ngIf="bookshelves?.length===0">
+  <ng-container *ngIf="bookshelves?.length === 0">
     <app-no-items-found text="You don't have any bookshelves :(">
     </app-no-items-found>
   </ng-container>
-
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Close</button>
-  <button mat-raised-button color="accent" [mat-dialog-close]="selectedBookshelves">Save
+  <button
+    mat-raised-button
+    color="accent"
+    [mat-dialog-close]="selectedBookshelves"
+  >
+    Save
   </button>
 </mat-dialog-actions>

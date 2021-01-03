@@ -14,25 +14,31 @@ mat-tab-group {
   width: 90%;
   overflow-y: auto;
   margin: $margin-regular auto;
+
   mat-expansion-panel {
     margin-bottom: $margin-default;
+
     mat-expansion-panel-header {
       height: $mat-expansion-header-height;
+
       mat-panel-title {
         justify-content: space-between;
         margin-right: $margin-large-xl;
       }
     }
+
     .content {
       display: flex;
       flex-direction: column;
       margin-top: $margin-regular;
+
       .more-info {
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
       }
+
       .buttons {
         width: 100%;
         display: flex;

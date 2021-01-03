@@ -1,5 +1,5 @@
-@import '../../variables.scss';
-@import '../../colors.scss';
+@import "../../variables.scss";
+@import "../../colors.scss";
 
 :host {
   height: 100%;
@@ -31,7 +31,7 @@
       }
 
       img {
-        margin: $margin-large auto;
+        margin: $margin-large auto $margin-default auto;
         width: $logo-big;
       }
     }
@@ -44,7 +44,7 @@
         font-size: $fs-regular;
         font-weight: $fw-bold;
         color: white;
-        margin: $margin-regular;
+        margin: $margin-default;
         height: $navbar-element-height-big;
         width: 80%;
         display: flex;
@@ -78,15 +78,14 @@
       }
 
       .separator {
-        height: 100px;
+        height: $navbar-separator-height;
       }
     }
   }
-
 }
 
 //Media queries for desktop
-@media (min-width: 768px) and (max-width: 1280px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   :host {
     nav {
       .logo {
@@ -96,17 +95,18 @@
 
         img {
           display: flex;
-          margin: $margin-regular auto;
+          margin: $margin-default auto;
           width: $logo-medium;
         }
       }
 
       ul {
         padding-left: 0;
+        margin-top: 0;
 
         li {
-          font-size: $fs-default-2;
-          margin: $margin-default auto;
+          font-size: $fs-default;
+          margin: $margin-default_2 auto;
           height: $navbar-element-height-small;
           border-radius: $br-small;
         }
@@ -117,7 +117,7 @@
         }
 
         .separator {
-          height: 60px;
+          height: $desktop-navbar-separator-height;
         }
       }
     }
@@ -125,7 +125,7 @@
 }
 
 //Media queries for tablet
-@media screen and (min-width: 600px) and(max-width: 768px) {
+@media screen and (min-width: 601px) and(max-width: 768px) {
   :host {
     min-height: 100%;
     overflow-y: auto;
@@ -145,6 +145,7 @@
       height: 100%;
       overflow-y: scroll;
     }
+
     .disabled {
       text-align: center;
       height: $tablet-navbar-height;
@@ -246,7 +247,7 @@
         }
 
         .separator {
-          height: 80px;
+          height: $mobile-navbar-separator-height;
         }
       }
     }

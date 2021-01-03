@@ -16,12 +16,6 @@ export class RegisterComponent {
   user = new User();
   serverErrors: string;
 
-  constructor(
-    protected router: Router,
-    protected snackBar: MatSnackBar,
-    protected userService: UserService
-  ) {}
-
   userRegistered = new FormGroup({
     name: new FormControl('', [Validators.required]),
     surname: new FormControl('', [Validators.required]),
@@ -36,7 +30,13 @@ export class RegisterComponent {
     ]),
   });
 
-  register() {
+  constructor(
+    protected router: Router,
+    protected snackBar: MatSnackBar,
+    protected userService: UserService
+  ) {}
+
+  register(): void {
     Object.assign(this.user, this.userRegistered.value);
     this.user.liked = [];
     this.user.read = [];

@@ -11,6 +11,7 @@
 
   .add-comment {
     height: 45%;
+
     .title {
       font-size: $margin-regular;
       font-weight: $fw-bold;
@@ -41,6 +42,7 @@
       }
     }
   }
+
   .comments-section-title {
     font-size: $fs-default-2;
     font-weight: $fw-bold;
@@ -49,9 +51,11 @@
     margin-top: $margin-regular;
     margin-left: $margin-regular;
   }
+
   .comments-list {
     height: 50%;
     overflow-y: auto;
+
     .comment {
       background-color: $comment-background-color;
       padding: $margin-default;

@@ -39,7 +39,7 @@
           </div>
         </div>
       </mat-expansion-panel>
-      <ng-container *ngIf="rewards?.length === 0"> </ng-container>
+      <ng-container *ngIf="rewards?.length === 0"></ng-container>
     </div>
   </mat-tab>
 
@@ -49,16 +49,16 @@
         <mat-label>Name</mat-label>
         <input matInput type="text" formControlName="name" required />
         <mat-error *ngIf="newReward.get('name').hasError('required')"
-          >Name is required</mat-error
-        >
+          >Name is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Points</mat-label>
         <input matInput type="number" formControlName="points" required />
         <mat-error *ngIf="newReward.get('points').hasError('required')"
-          >Points are required</mat-error
-        >
+          >Points are required
+        </mat-error>
       </mat-form-field>
       <div class="available-libraries" *ngIf="choosedLibraries.length !== 0">
         <p>Reward will be available in:</p>

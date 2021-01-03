@@ -40,7 +40,7 @@
 
       img {
         margin-right: $margin-regular;
-        width: 25%
+        width: 25%;
       }
 
       .info {
@@ -69,7 +69,6 @@
 
         i {
           margin-left: $margin-small;
-
         }
       }
     }
@@ -97,7 +96,7 @@
   :host {
     .header {
       h1 {
-        font-size: $fs-medium;
+        font-size: $fs-regular;
       }
     }
 
@@ -110,11 +109,18 @@
         box-sizing: border-box;
 
         img {
-          width: 20%
+          width: 20%;
+          height: 20%;
+          align-self: center;
         }
 
         .info {
           width: 45%;
+
+          h1 {
+            font-size: $fs-regular;
+            margin-bottom: $margin-small;
+          }
         }
 
         .info-actions {

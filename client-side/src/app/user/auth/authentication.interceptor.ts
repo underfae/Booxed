@@ -1,37 +1,48 @@
-import {HttpInterceptor, HttpRequest, HttpEvent, HttpHandler} from "@angular/common/http";
-import {Injectable} from "@angular/core";
-import {Router} from "@angular/router";
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpEvent,
+  HttpHandler,
+} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
-import {Observable} from "rxjs";
-import {tap} from 'rxjs/operators'
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
-import {UserService} from "../../core/user/user.service";
+import { UserService } from '../../core/user/user.service';
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
-  constructor(protected userService: UserService, protected router: Router) {
-  }
+  constructor(protected userService: UserService, protected router: Router) {}
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     const regex = /googleapis\.com/i;
     if (req.headers.get('noauth')) {
-      return next.handle(req.clone())
+      return next.handle(req.clone());
     } else {
       if (regex.test(req.url)) {
-        return next.handle(req)
+        return next.handle(req);
       } else {
-        const cloned = req.clone({headers: req.headers.set('Authorization', "Bearer " + this.userService.getUserToken())});
+        const cloned = req.clone({
+          headers: req.headers.set(
+            'Authorization',
+            'Bearer ' + this.userService.getUserToken()
+          ),
+        });
         return next.handle(cloned).pipe(
           tap(
-            event => {
-            },
-            error => {
+            (event) => {},
+            (error) => {
               if (error.error.auth == false) {
-                this.router.navigateByUrl('/login')
+                this.router.navigateByUrl('/login');
               }
             }
           )
-        )
+        );
       }
     }
   }

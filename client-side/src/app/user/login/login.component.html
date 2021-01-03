@@ -1,25 +1,32 @@
 <form [formGroup]="loggedUser" (ngSubmit)="login()">
-  <img src="../../../assets/img/booxed.png"/>
+  <img src="../../../assets/img/booxed.png" />
   <p>Welcome back! Please log in to your account</p>
 
   <mat-form-field color="accent">
     <mat-label>Username</mat-label>
-    <input matInput type="text" formControlName="username" required/>
+    <input matInput type="text" formControlName="username" required />
     <mat-error *ngIf="loggedUser.get('username').hasError('required')"
-    >Username is required
+      >Username is required
     </mat-error>
   </mat-form-field>
 
   <mat-form-field color="accent">
     <mat-label>Password</mat-label>
-    <input matInput type="password" formControlName="password" required/>
+    <input matInput type="password" formControlName="password" required />
     <mat-error *ngIf="loggedUser.get('password').hasError('required')"
-    >Password is required!
+      >Password is required!
     </mat-error>
   </mat-form-field>
-
+  <a routerLink="/password/forgot-password">Forgot password?</a>
   <div class="buttons">
-    <button mat-raised-button color="accent" type="submit" [disabled]="!loggedUser.valid">Log in!</button>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="!loggedUser.valid"
+    >
+      Log in!
+    </button>
     <a mat-raised-button routerLink="/register"> Sign up! </a>
   </div>
 </form>

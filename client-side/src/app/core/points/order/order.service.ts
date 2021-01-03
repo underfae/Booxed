@@ -1,21 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../../../environments/environment";
-import {Order} from "./order.model";
+
+import { Order } from './order.model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderService {
+  constructor(protected http: HttpClient) {}
 
-  constructor(protected http: HttpClient) { }
-
-  getOrdersById(userId: string){
-    return this.http.get(environment.apiBaseUrl + "/orders/" + userId)
+  getOrdersById(userId: string) {
+    return this.http.get(environment.apiBaseUrl + '/orders/' + userId);
   }
 
-  addOrder(order: Order){
-    return this.http.post(environment.apiBaseUrl + "/order/create", order)
+  addOrder(order: Order) {
+    return this.http.post(environment.apiBaseUrl + '/order/create', order);
   }
-
 }

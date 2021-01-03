@@ -1,10 +1,11 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { SendMessageDialogComponent } from '../../shared/components/send-message-dialog/send-message-dialog.component';
 import { User } from '../../core/user/user.model';
 import { UserService } from '../../core/user/user.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
-import { SendMessageDialogComponent } from '../../shared/components/send-message-dialog/send-message-dialog.component';
 
 @Component({
   selector: 'app-users',

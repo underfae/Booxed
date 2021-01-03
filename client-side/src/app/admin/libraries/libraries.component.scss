@@ -14,25 +14,31 @@ mat-tab-group {
   width: 90%;
   overflow-y: auto;
   margin: $margin-regular auto;
+
   mat-expansion-panel {
     margin-bottom: $margin-default;
+
     mat-expansion-panel-header {
       height: $mat-expansion-header-height;
+
       mat-panel-title {
         justify-content: space-between;
         margin-right: $margin-large-xl;
       }
     }
+
     .content {
       display: flex;
       flex-direction: column;
       margin-top: $margin-regular;
+
       .more-info {
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
       }
+
       .buttons {
         width: 100%;
         display: flex;
@@ -48,9 +54,11 @@ form {
   flex-direction: column;
   width: 40%;
   margin: $margin-regular auto;
+
   .building-apartment {
     display: flex;
     justify-content: space-between;
+
     mat-form-field {
       width: 45%;
     }
@@ -68,9 +76,11 @@ form {
 @media screen and(max-width: 600px) {
   form {
     width: 80%;
+
     .building-apartment {
       flex-direction: column;
       justify-content: normal;
+
       mat-form-field {
         width: 100%;
       }

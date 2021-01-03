@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Order = mongoose.model('order');
 const ObjectId = require('mongoose').Types.ObjectId;
 
-module.exports.getOrders = (req,res) => {
+module.exports.getOrders = (req, res) => {
     const id = req.params.id
     if (!ObjectId.isValid(id))
         return res.status(400).send('There is no record with given id.')
@@ -16,10 +16,12 @@ module.exports.getOrders = (req,res) => {
         })
     }
 }
-module.exports.getOrder = (req,res) => {}
-module.exports.deleteOrder = (req,res) => {}
+module.exports.getOrder = (req, res) => {
+}
+module.exports.deleteOrder = (req, res) => {
+}
 
-module.exports.postOrder = (req,res) => {
+module.exports.postOrder = (req, res) => {
     let order = new Order();
     order.name = req.body.name;
     order.surname = req.body.surname;

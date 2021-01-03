@@ -1,12 +1,18 @@
 <div class="container">
   <div class="image">
-    <img src="{{image}}">
+    <img src="{{ image }}" />
   </div>
   <div class="details">
     <div class="info">
-    <div class="title">{{title}}</div>
-    <div class="author"> {{author}}</div>
+      <div class="title">{{ title }}</div>
+      <div class="author">{{ author }}</div>
     </div>
-    <button mat-raised-button color="accent" [routerLink]="['/booxed/search/' + bookId]"> Details </button>
+    <button
+      mat-raised-button
+      color="accent"
+      [routerLink]="['/booxed/search/' + bookId]"
+    >
+      Details
+    </button>
   </div>
 </div>

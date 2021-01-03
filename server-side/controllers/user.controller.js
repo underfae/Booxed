@@ -236,6 +236,7 @@ module.exports.sendMessage = (req, res) => {
         pass: "Booxed123!",
       },
     });
+
     const mailOptions = {
       from: "noreply.booxed@gmail.com",
       to: email,

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../core/user/user.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+
+import { UserService } from '../../core/user/user.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -10,24 +11,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./reset-password.component.scss'],
 })
 export class ResetPasswordComponent implements OnInit {
-  constructor(
-    protected userService: UserService,
-    protected snackBar: MatSnackBar,
-    protected router: Router
-  ) {}
-
   token: string = '';
-
-  ngOnInit() {
-    let splittedpath = window.location.pathname.split('/');
-    this.token = splittedpath[3];
-  }
 
   resetPassword = new FormGroup({
     password: new FormControl('', [Validators.required]),
   });
 
-  changePassword() {
+  constructor(
+    protected router: Router,
+    protected snackBar: MatSnackBar,
+    protected userService: UserService
+  ) {}
+
+  ngOnInit(): void {
+    const splittedpath = window.location.pathname.split('/');
+    this.token = splittedpath[3];
+  }
+
+  changePassword(): void {
     this.userService
       .changePassword(this.resetPassword.value.password, this.token)
       .subscribe(

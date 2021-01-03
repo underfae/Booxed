@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Library } from '../../core/points/library/library.model';
-import { LibraryService } from '../../core/points/library/library.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { Library } from '../../core/points/library/library.model';
+import { LibraryService } from '../../core/points/library/library.service';
 
 @Component({
   selector: 'app-libraries',
@@ -13,6 +14,7 @@ export class LibrariesComponent implements OnInit {
   libraries: Library[] = [];
   library = new Library();
   serverErrors: string;
+
   constructor(
     protected libraryService: LibraryService,
     protected snackBar: MatSnackBar,

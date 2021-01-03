@@ -14,28 +14,35 @@ mat-tab-group {
   width: 90%;
   overflow-y: auto;
   margin: $margin-regular auto;
+
   mat-expansion-panel {
     margin-bottom: $margin-default;
+
     mat-expansion-panel-header {
       height: $mat-expansion-header-height;
+
       mat-panel-title {
         justify-content: space-between;
         margin-right: $margin-large-xl;
       }
     }
+
     .content {
       display: flex;
       flex-direction: column;
       margin-top: $margin-regular;
+
       .libraries {
         display: flex;
         flex-direction: column;
         width: 100%;
+
         .library-name {
           color: #686767;
           font-style: italic;
         }
       }
+
       .buttons {
         width: 100%;
         display: flex;
@@ -51,22 +58,27 @@ form {
   flex-direction: column;
   width: 40%;
   margin: $margin-regular auto;
+
   .available-libraries {
     margin-top: $margin-regular;
+
     p {
       font-weight: $fw-bold;
     }
+
     .library {
       color: $secondary-color;
       max-height: 150px;
       overflow-y: auto;
     }
   }
+
   .buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: $margin-regular;
+
     button {
       width: fit-content;
     }

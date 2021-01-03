@@ -1,3 +1,6 @@
+@import "src/variables";
+@import "src/colors";
+
 .main-div {
   display: flex;
   flex-direction: column;
@@ -6,7 +9,8 @@
   img {
     width: 50%;
   }
-  h2{
-    color: #686767;
+
+  h2 {
+    color: $secondary-color;
   }
 }

@@ -1,81 +1,94 @@
-.container{
+@import "src/variables";
+@import "src/colors";
+
+.container {
   height: 230px;
   width: 120px;
   border-radius: 13px;
-  border: 3px solid #d8d8d8;
+  border: 3px solid $div-background-color;
   transition-property: width, height;
   transition-duration: 0.2s;
   transition-timing-function: linear;
-  .image{
+
+  .image {
     height: 55%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    img{
+
+    img {
       width: 70px;
     }
   }
-  .details{
+
+  .details {
     height: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    .info{
+
+    .info {
       text-align: center;
-      .title{
-        font-weight: 500;
+
+      .title {
+        font-weight: $fw-bold;
         width: 110px;
         overflow-x: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      .author{
+
+      .author {
         width: 110px;
         overflow-x: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
     }
-
   }
 }
 
-.container:hover{
+.container:hover {
   background-color: #d8d8d8;
   width: 130px;
-  height:240px;
+  height: 240px;
 }
 
 //Media queries for desktop
 @media (min-width: 768px) and (max-width: 1280px) {
-  .container{
+  .container {
     height: 160px;
     width: 100px;
     transition-property: none;
-    .image{
+
+    .image {
       height: 50%;
-      img{
+
+      img {
         width: 50px;
       }
     }
 
-    .details{
+    .details {
       height: 50%;
-      .info{
-        .title{
+
+      .info {
+        .title {
           width: 90px;
           margin: auto;
         }
-        .author{
+
+        .author {
           font-size: 12px;
           width: 90px;
           font-style: italic;
         }
       }
     }
-    button{
+
+    button {
       width: 60px;
       height: 30px;
       padding: 0;
@@ -84,9 +97,9 @@
       place-content: center;
     }
   }
-  .container:hover{
+  .container:hover {
     background-color: #d8d8d8;
     width: 100px;
-    height:160px;
+    height: 160px;
   }
 }

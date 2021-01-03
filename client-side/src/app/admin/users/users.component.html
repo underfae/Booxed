@@ -51,7 +51,7 @@
           </div>
         </div>
       </mat-expansion-panel>
-      <ng-container *ngIf="users?.length === 0"> </ng-container>
+      <ng-container *ngIf="users?.length === 0"></ng-container>
     </div>
   </mat-tab>
 
@@ -61,35 +61,35 @@
         <mat-label>Name</mat-label>
         <input matInput type="text" formControlName="name" required />
         <mat-error *ngIf="newUser.get('name').hasError('required')"
-          >Name is required</mat-error
-        >
+          >Name is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Surname</mat-label>
         <input matInput type="text" formControlName="surname" required />
         <mat-error *ngIf="newUser.get('surname').hasError('required')"
-          >Surname is required</mat-error
-        >
+          >Surname is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Username</mat-label>
         <input matInput type="text" formControlName="username" required />
         <mat-error *ngIf="newUser.get('username').hasError('required')"
-          >Username is required</mat-error
-        >
+          >Username is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>E-mail</mat-label>
         <input matInput type="email" formControlName="email" required />
         <mat-error *ngIf="newUser.get('email').hasError('required')"
-          >E-mail is required</mat-error
-        >
+          >E-mail is required
+        </mat-error>
         <mat-error *ngIf="newUser.get('email').hasError('email')"
-          >Invalid email</mat-error
-        >
+          >Invalid email
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -106,16 +106,16 @@
           class="far fa-question-circle"
         ></i>
         <mat-error *ngIf="newUser.get('password').hasError('required')"
-          >Password is required!</mat-error
-        >
+          >Password is required!
+        </mat-error>
         <mat-error *ngIf="newUser.get('password').hasError('pattern')"
-          >Password must follow the specified patttern!</mat-error
-        >
+          >Password must follow the specified patttern!
+        </mat-error>
       </mat-form-field>
 
       <mat-checkbox color="primary" #terms required
-        >I agree with terms and conditions*</mat-checkbox
-      >
+        >I agree with terms and conditions*
+      </mat-checkbox>
       <button
         mat-raised-button
         color="accent"

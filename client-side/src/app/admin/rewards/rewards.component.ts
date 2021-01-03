@@ -1,12 +1,13 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { RewardService } from '../../core/points/reward/reward.service';
-import { LibraryPreview, Reward } from '../../core/points/reward/reward.model';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { AddLibraryComponent } from '../../shared/components/add-library/add-library.component';
-import { LibraryService } from '../../core/points/library/library.service';
 import { Library } from '../../core/points/library/library.model';
+import { LibraryPreview, Reward } from '../../core/points/reward/reward.model';
+import { LibraryService } from '../../core/points/library/library.service';
+import { RewardService } from '../../core/points/reward/reward.service';
 
 @Component({
   selector: 'app-rewards',

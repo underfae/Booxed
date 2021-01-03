@@ -1,22 +1,29 @@
 <div class="header">
   <h1>BOOKSHELVES</h1>
-  <button mat-raised-button color="accent" (click)="openDialog()">ADD NEW BOOKSHELF</button>
+  <button mat-raised-button color="accent" (click)="openDialog()">
+    ADD NEW BOOKSHELF
+  </button>
 </div>
 <div class="bookshelves">
   <ng-container *ngIf="bookshelves.length !== 0">
     <div *ngFor="let item of bookshelves">
       <div class="mat-card" (click)="openBookshelfDialog(item)">
-        <img src="./assets/img/books.png">
+        <img src="./assets/img/books.png" />
         <div class="info">
-          <h1 class="name"> {{item.name.toUpperCase()}}</h1>
-          <p class="description">{{item.description}}</p>
+          <h1 class="name">{{ item.name.toUpperCase() }}</h1>
+          <p class="description">{{ item.description }}</p>
         </div>
         <div class="info-actions">
           <div class="books">
             <label>BOOKS</label>
-            <p> {{item.books.length}}</p>
+            <p>{{ item.books.length }}</p>
           </div>
-          <button mat-button color="accent" class="delete" (click)="deleteBookshelf(item._id)">
+          <button
+            mat-button
+            color="accent"
+            class="delete"
+            (click)="deleteBookshelf(item._id)"
+          >
             DELETE BOOKSHELF <i class="far fa-trash-alt"></i>
           </button>
         </div>
@@ -24,7 +31,9 @@
     </div>
   </ng-container>
   <ng-container *ngIf="bookshelves.length === 0">
-    <app-no-items-found text="You don't have any bookshelves. It's time to change that! :)">
+    <app-no-items-found
+      text="You don't have any bookshelves. It's time to change that! :)"
+    >
     </app-no-items-found>
   </ng-container>
 </div>

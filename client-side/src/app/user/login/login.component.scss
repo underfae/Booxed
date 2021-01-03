@@ -17,6 +17,7 @@ $button-width-small: 100px;
     flex-direction: column;
     width: 50%;
     margin: auto;
+
     img {
       width: 150px;
       margin: 0 auto $margin-large-xl auto;
@@ -37,6 +38,7 @@ $button-width-small: 100px;
       display: flex;
       flex-direction: row;
       margin-top: $margin-regular;
+
       button, a {
         margin: $margin-regular auto $margin-small auto;
         width: $button-width-normal;
@@ -85,6 +87,7 @@ $button-width-small: 100px;
   :host {
     form {
       width: 80%;
+
       .buttons {
         button, a {
           width: $button-width-small;

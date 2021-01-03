@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Comment, UpdatedComment } from './comment.model';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+import { Comment, UpdatedComment } from './comment.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({

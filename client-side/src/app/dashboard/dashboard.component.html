@@ -1,44 +1,58 @@
-<h1> Welcome back {{user?.name}}! </h1>
-<h2> Overview </h2>
+<h1>Welcome back {{ user?.name }}!</h1>
+<h2>Overview</h2>
 
 <div class="overview">
   <div class="element">
-    <div class="label"> Liked Books</div>
+    <div class="label">Liked Books</div>
     <div class="circle">
-      {{user?.liked?.length}}
+      {{ user?.liked?.length }}
     </div>
   </div>
   <div class="element">
-    <div class="label"> Points</div>
+    <div class="label">Points</div>
     <div class="circle">
-      {{user?.points}}
+      {{ user?.points }}
     </div>
   </div>
   <div class="element">
-    <div class="label"> Books you've read</div>
+    <div class="label">Books you've read</div>
     <div class="circle">
-      {{user?.read?.length}}
+      {{ user?.read?.length }}
     </div>
   </div>
 </div>
 
-  <div class="middle-div">
-    <div class="info">
-      <h2>Build your own online library</h2>
-      <img src="../../assets/img/books.png">
-    </div>
-    <div class="buttons">
-      <button mat-raised-button (click)="openDialog()">Create new bookshelf</button>
-      <button mat-raised-button  [routerLink]="['/booxed/bookshelves']" class="bookshelves">Your bookshelves</button>
-      <button mat-raised-button  [routerLink]="['/booxed/search']" class="find">Find a book</button>
-    </div>
+<div class="middle-div">
+  <div class="info">
+    <h2>Build your own online library</h2>
+    <img src="../../assets/img/books.png" />
   </div>
-  <div class="random-books" >
-    <h2> Random Books </h2>
-    <div class="carousel">
-      <ng-container *ngFor="let book of dailyBooks">
-        <app-book-preview bookId="{{book?.id}}" author="{{book?.volumeInfo?.authors}}"
-                          title="{{book?.volumeInfo?.title}}" image="{{book?.volumeInfo?.imageLinks?.smallThumbnail}}"></app-book-preview>
-      </ng-container>
-    </div>
+  <div class="buttons">
+    <button mat-raised-button (click)="openDialog()">
+      Create new bookshelf
+    </button>
+    <button
+      mat-raised-button
+      [routerLink]="['/booxed/bookshelves']"
+      class="bookshelves"
+    >
+      Your bookshelves
+    </button>
+    <button mat-raised-button [routerLink]="['/booxed/search']" class="find">
+      Find a book
+    </button>
   </div>
+</div>
+<div class="random-books">
+  <h2>Random Books</h2>
+  <div class="carousel">
+    <ng-container *ngFor="let book of dailyBooks">
+      <app-book-preview
+        bookId="{{ book?.id }}"
+        author="{{ book?.volumeInfo?.authors }}"
+        title="{{ book?.volumeInfo?.title }}"
+        image="{{ book?.volumeInfo?.imageLinks?.smallThumbnail }}"
+      ></app-book-preview>
+    </ng-container>
+  </div>
+</div>

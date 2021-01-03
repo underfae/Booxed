@@ -1,31 +1,42 @@
-<h2 mat-dialog-title>{{data?.bookshelf?.name?.toUpperCase()}} BOOKSHELF</h2>
+<h2 mat-dialog-title>{{ data?.bookshelf?.name?.toUpperCase() }} BOOKSHELF</h2>
 <mat-dialog-content class="mat-typography">
-  <div *ngIf="data?.bookshelf?.books?.length!==0">
+  <div *ngIf="data?.bookshelf?.books?.length !== 0">
     <div *ngFor="let el of data?.bookshelf.books">
       <mat-card class="book">
         <div class="image">
-        <img src="{{el?.image}}">
+          <img src="{{ el?.image }}" />
         </div>
         <div class="book-info">
           <div class="title">
-            {{el?.title}}
+            {{ el?.title }}
           </div>
           <div class="authors">
-            {{el?.authors}}
+            {{ el?.authors }}
           </div>
         </div>
         <div class="actions">
-          <button mat-raised-button color="accent" (click)="deleteBook(el.id_book)">Delete Book</button>
-          <button mat-raised-button color="accent"  (click)="navigateToDetails(el.id_book)">Book Details</button>
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="deleteBook(el.id_book)"
+          >
+            Delete Book
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="navigateToDetails(el.id_book)"
+          >
+            Book Details
+          </button>
         </div>
       </mat-card>
     </div>
   </div>
-  <ng-container *ngIf="data.bookshelf.books.length===0">
+  <ng-container *ngIf="data.bookshelf.books.length === 0">
     <app-no-items-found text="You don't have any books here yet :(">
     </app-no-items-found>
   </ng-container>
-
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Close</button>

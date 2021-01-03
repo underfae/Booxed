@@ -1,9 +1,13 @@
-.form{
+@import "src/variables";
+@import "src/colors";
+
+.form {
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: 24px auto;
-  textarea{
-    min-height: 100px;
+  margin: $margin-regular auto;
+
+  textarea {
+    min-height: $textarea-comments-height;
   }
 }

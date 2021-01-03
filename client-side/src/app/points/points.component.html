@@ -1,40 +1,58 @@
 <div class="info">
   <div class="get">
-    <h2> How to get a reward?</h2>
+    <h2>How to get a reward?</h2>
     <p>
-      To get a reward you must gain a certain amount of points. How to get points? Points are counted with every comment
-      you send and every book you mark as read. Below you can see a list of available rewards.
+      To get a reward you must gain a certain amount of points. How to get
+      points? Points are counted with every comment you send and every book you
+      mark as read. Below you can see a list of available rewards.
     </p>
   </div>
   <div class="points">
     <div class="outside-circle">
       <div class="inside-circle">
         <div class="user-points">
-          <p class="pts"> {{user?.points}}</p>
-          <p class="label"> points</p>
+          <p class="pts">{{ user?.points }}</p>
+          <p class="label">points</p>
         </div>
       </div>
     </div>
   </div>
   <div class="collect">
-    <h2> How to collect a reward?</h2>
-    <p> Choose the reward from list below. Then fill in a form, select a place where you want to pick up your reward and
-      click save. That's all :)</p>
+    <h2>How to collect a reward?</h2>
+    <p>
+      Choose the reward from list below. Then fill in a form, select a place
+      where you want to pick up your reward and click save. That's all :)
+    </p>
     <div class="additional-points-info">
-      <button mat-raised-button color="accent" (click)="openOrdersDialog()"> Your orders</button>
-      <p> You have {{user?.points}} points </p>
+      <button mat-raised-button color="accent" (click)="openOrdersDialog()">
+        Your orders
+      </button>
+      <p>You have {{ user?.points }} points</p>
     </div>
   </div>
 </div>
 <div *ngIf="rewards?.length !== 0" class="list-of-rewards">
   <div *ngFor="let item of rewards" class="rewards">
     <mat-card>
-      <app-readonly-field label="Reward" content="{{item.name}}"></app-readonly-field>
-      <app-readonly-field label="Points needed" content="{{item.points}}"></app-readonly-field>
-      <app-readonly-field label="Availability in bookstores" content="{{item.libraries.length}}"></app-readonly-field>
+      <app-readonly-field
+        label="Reward"
+        content="{{ item.name }}"
+      ></app-readonly-field>
+      <app-readonly-field
+        label="Points needed"
+        content="{{ item.points }}"
+      ></app-readonly-field>
+      <app-readonly-field
+        label="Availability in bookstores"
+        content="{{ item.libraries.length }}"
+      ></app-readonly-field>
       <div class="button">
-        <button mat-raised-button color="accent" [disabled]="user?.points < item.points || item.libraries.length==0"
-                (click)="openCreateOrderDialog(item)">
+        <button
+          mat-raised-button
+          color="accent"
+          [disabled]="user?.points < item.points || item.libraries.length == 0"
+          (click)="openCreateOrderDialog(item)"
+        >
           Order reward
         </button>
       </div>

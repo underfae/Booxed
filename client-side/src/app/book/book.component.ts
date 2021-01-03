@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BooksService } from '../core/books/books.service';
-import { UserService } from '../core/user/user.service';
-import { ModifiedUser, User } from '../core/user/user.model';
-import { PreviewBook } from '../core/books/book.model';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { AddToBookshelfDialogComponent } from '../shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component';
+import { BooksService } from '../core/books/books.service';
 import { BookshelfService } from '../core/bookshelves/bookshelf.service';
-import { SharedService } from '../core/shared/shared.service';
+import { ModifiedUser, User } from '../core/user/user.model';
 import { Movie } from '../core/shared/movie.model';
+import { PreviewBook } from '../core/books/book.model';
+import { SharedService } from '../core/shared/shared.service';
+import { UserService } from '../core/user/user.service';
 
 @Component({
   selector: 'app-book',

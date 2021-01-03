@@ -1,9 +1,7 @@
+@import "src/variables";
+@import "src/colors";
+
 :host {
-
-  .mat-dialog-title {
-
-  }
-
   mat-dialog-content {
     height: 460px;
 
@@ -12,8 +10,8 @@
       margin: auto;
       display: flex;
       flex-direction: row;
-      height: 80px;
-      margin-bottom: 24px;
+      height: $bookshelf-list-book-height;
+      margin-bottom: $margin-regular;
 
       .image {
         width: 15%;
@@ -27,20 +25,19 @@
 
       .book-info {
         width: 55%;
-        padding: 0 8px;
+        padding: 0 $margin-small;
         display: flex;
         flex-direction: column;
         align-self: center;
 
         .title {
-          font-weight: 500;
-          color: #686767;
-          font-size: 16px;
+          font-weight: $fw-bold;
+          color: $secondary-color;
+          font-size: $fs-default-2;
         }
 
         .authors {
           font-style: italic;
-
         }
       }
 
@@ -50,7 +47,6 @@
         flex-direction: column;
         justify-content: space-between;
       }
-
     }
   }
 }

@@ -3,18 +3,29 @@
   <div class="form">
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput type="text" [(ngModel)]="data.name" required/>
+      <input matInput type="text" [(ngModel)]="data.name" required />
       <mat-error *ngIf="!data.name">Name is required</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Description</mat-label>
-      <textarea matInput type="text" [(ngModel)]="data.description" required></textarea>
+      <textarea
+        matInput
+        type="text"
+        [(ngModel)]="data.description"
+        required
+      ></textarea>
       <mat-error *ngIf="!data.description">Description is required</mat-error>
     </mat-form-field>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button (click)="close()">Cancel</button>
-  <button mat-raised-button color="accent" [disabled]="!data.description || !data.name" [mat-dialog-close]="data">Save
+  <button
+    mat-raised-button
+    color="accent"
+    [disabled]="!data.description || !data.name"
+    [mat-dialog-close]="data"
+  >
+    Save
   </button>
 </mat-dialog-actions>

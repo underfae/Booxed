@@ -12,7 +12,8 @@
     mat-form-field {
       width: 50%;
       margin-right: $margin-regular;
-      i{
+
+      i {
         position: absolute;
         right: $margin-default;
         color: $primary-color;
@@ -20,7 +21,8 @@
         transition-duration: 0.2s;
         transition-timing-function: linear;
       }
-      i:hover{
+
+      i:hover {
         cursor: pointer;
         font-size: $fs-default-2;
       }
@@ -55,6 +57,7 @@
         width: 90%;
         margin-right: 0;
       }
+
       button {
         height: fit-content;
       }

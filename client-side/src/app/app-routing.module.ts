@@ -6,6 +6,7 @@ import { BookComponent } from './book/book.component';
 import { BookshelvesComponent } from './bookshelves/bookshelves.component';
 import { CommentsComponent } from './admin/comments/comments.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { LibrariesComponent } from './admin/libraries/libraries.component';
 import { LikedAndReadComponent } from './liked-and-read/liked-and-read.component';
 import { LoginComponent } from './user/login/login.component';
@@ -18,7 +19,6 @@ import { RewardsComponent } from './admin/rewards/rewards.component';
 import { SearchComponent } from './search/search.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './admin/users/users.component';
-import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {

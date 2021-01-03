@@ -1,9 +1,17 @@
 <div class="list">
   <ng-container *ngFor="let book of books">
     <div class="book-container">
-      <i class="far fa-trash-alt" (click)="deleteBook(book?.id_book)"></i>
-      <app-book-preview title="{{book?.title}}" author="{{book?.authors[0]}}" image="{{book?.image}}"
-                        bookId="{{book?.id_book}}"></app-book-preview>
+      <i
+        class="far fa-trash-alt"
+        *ngIf="mode === 'liked'"
+        (click)="deleteBook(book?.id_book)"
+      ></i>
+      <app-book-preview
+        title="{{ book?.title }}"
+        author="{{ book?.authors[0] }}"
+        image="{{ book?.image }}"
+        bookId="{{ book?.id_book }}"
+      ></app-book-preview>
     </div>
   </ng-container>
 </div>

@@ -9,16 +9,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./forgot-password.component.scss'],
 })
 export class ForgotPasswordComponent {
+  forgotPassword = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
+
   constructor(
     protected userService: UserService,
     protected snackBar: MatSnackBar
   ) {}
 
-  forgotPassword = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-  });
-
-  sendLink() {
+  sendLink(): void {
     this.userService.forgotPassword(this.forgotPassword.value.email).subscribe(
       (result: any) => {
         this.snackBar.open('Email successfully send. Check your email', 'OK', {
