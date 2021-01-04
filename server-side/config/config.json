@@ -8,7 +8,7 @@
     "CLIENT_URL": "http://localhost:4200"
   },
   "prod": {
-    "DB_URL": "mongodb://......./booxed",
+    "DB_URL": "mongodb+srv://gabriela_fraczek:malpakawa@cluster0.igtgo.mongodb.net/booxed?retryWrites=true&w=majority",
     "PORT": 80,
     "JWT_SECRET": "BOOXED#2303",
     "JWT_EXPIRATION_TIME": "30m",

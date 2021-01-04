@@ -20,108 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eef5d6f3-6661-4e7c-b1f4-6090e6cbfb20" name="Default Changelist" comment="User Authentication + mainPage basic view">
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/comments/comments.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/comments/comments.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/comments/comments.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/comments/comments.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/comments/comments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/comments/comments.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/libraries/libraries.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/libraries/libraries.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/libraries/libraries.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/libraries/libraries.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/libraries/libraries.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/libraries/libraries.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/rewards/rewards.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/rewards/rewards.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/rewards/rewards.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/rewards/rewards.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/rewards/rewards.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/rewards/rewards.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/users/users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/users/users.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/users/users.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/users/users.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/book/book.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/book/book.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/book/book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/book/book.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/bookshelves/bookshelves.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/bookshelves/bookshelves.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/bookshelves/bookshelves.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/bookshelves/bookshelves.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/bookshelves/bookshelves.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/bookshelves/bookshelves.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/books/book.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/books/book.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/bookshelves/bookshelf.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/bookshelves/bookshelf.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/comment/comment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/comment/comment.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/points/library/library.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/points/library/library.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/points/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/points/order/order.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/shared/shared.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/shared/shared.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/dashboard/dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/dashboard/dashboard.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/dashboard/dashboard.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/dashboard/dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/liked-and-read/liked-and-read.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/liked-and-read/liked-and-read.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/liked-and-read/liked-and-read.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/liked-and-read/liked-and-read.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/liked-and-read/liked-and-read.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/liked-and-read/liked-and-read.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/mainpage/mainpage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/mainpage/mainpage.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/mainpage/mainpage.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/mainpage/mainpage.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/mainpage/mainpage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/mainpage/mainpage.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/points/points.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/points/points.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/points/points.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/points/points.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/search/search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/search/search.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/search/search.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/search/search.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/search/search.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/add-library/add-library.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/add-library/add-library.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/add-library/add-library.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/add-library/add-library.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/add-library/add-library.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/add-library/add-library.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/add-to-bookshelf-dialog/add-to-bookshelf-dialog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/book-preview/book-preview.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/book-preview/book-preview.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/book-preview/book-preview.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/book-preview/book-preview.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/book-preview/book-preview.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/book-preview/book-preview.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/bookshelf-dialog/bookshelf-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/bookshelf-dialog/bookshelf-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/bookshelf-dialog/bookshelf-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/bookshelf-dialog/bookshelf-dialog.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/bookshelf-dialog/bookshelf-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/bookshelf-dialog/bookshelf-dialog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/comments-section/comments-section.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/comments-section/comments-section.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/comments-section/comments-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/comments-section/comments-section.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/create-bookshelf-dialog/create-bookshelf-dialog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/create-order-dialog/create-order-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/create-order-dialog/create-order-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/create-order-dialog/create-order-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/create-order-dialog/create-order-dialog.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/create-order-dialog/create-order-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/create-order-dialog/create-order-dialog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/no-items-found/no-items-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/no-items-found/no-items-found.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/no-items-found/no-items-found.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/no-items-found/no-items-found.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/no-items-found/no-items-found.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/no-items-found/no-items-found.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/orders-dialog/orders-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/orders-dialog/orders-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/orders-dialog/orders-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/orders-dialog/orders-dialog.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/orders-dialog/orders-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/orders-dialog/orders-dialog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/page-not-found/page-not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/page-not-found/page-not-found.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/page-not-found/page-not-found.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/page-not-found/page-not-found.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/page-not-found/page-not-found.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/page-not-found/page-not-found.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/readonly-field/readonly-field.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/readonly-field/readonly-field.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/readonly-field/readonly-field.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/readonly-field/readonly-field.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/readonly-field/readonly-field.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/readonly-field/readonly-field.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/send-message-dialog/send-message-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/send-message-dialog/send-message-dialog.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/auth/authentication.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/auth/authentication.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/auth/authentication.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/auth/authentication.interceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/forgot-password/forgot-password.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/forgot-password/forgot-password.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/forgot-password/forgot-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/forgot-password/forgot-password.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/reset-password/reset-password.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/reset-password/reset-password.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/user/reset-password/reset-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/user/reset-password/reset-password.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/jwt.helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/jwt.helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/passport-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/passport-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/bookshelf.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/bookshelf.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/library.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/library.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/movie.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/movie.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/order.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/order.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/shared.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/shared.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/bookshelf.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/bookshelf.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/comment.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/comment.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/db-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/db-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/library.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/library.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/movie.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/movie.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/order.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/order.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +102,8 @@
       <workItem from="1608394837506" duration="51165000" />
       <workItem from="1609063657622" duration="18030000" />
       <workItem from="1609316095206" duration="4069000" />
-      <workItem from="1609508335942" duration="1931000" />
-    </task>
-    <task id="LOCAL-00042" summary="Comment section and mainpage stye changes">
-      <created>1606471427095</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1606471427096</updated>
+      <workItem from="1609508335942" duration="11318000" />
+      <workItem from="1609777762536" duration="307000" />
     </task>
     <task id="LOCAL-00043" summary="Book component style changed">
       <created>1606473330770</created>
@@ -547,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609080359674</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Code refactor">
+      <created>1609671205079</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1609671205079</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +467,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="media queries and refactor for dashboard component" />
     <MESSAGE value="new styling variables" />
     <MESSAGE value="media queries and refactor for bookshelves component" />
     <MESSAGE value="media queries and refactor for search component + dashboard and mainpage fix" />
@@ -591,7 +491,8 @@
     <MESSAGE value="new colors" />
     <MESSAGE value="media queries book-preview.component.scss" />
     <MESSAGE value="adding and deleting points" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding and deleting points" />
+    <MESSAGE value="Code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code refactor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2151" y="0" width="800" height="600" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1606330485656">
@@ -608,46 +509,65 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1606127105516" />
-    <state x="493" y="171" key="FileChooserDialogImpl" timestamp="1608456525135">
+    <state x="493" y="171" key="FileChooserDialogImpl" timestamp="1609776787819">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="493" y="171" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1608456525135" />
     <state x="2660" y="261" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606320739701" />
+    <state x="493" y="171" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1609776787819" />
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1609776789956">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609776789956" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1609776789952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609776789952" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1609776789950">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609776789950" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1609776789953">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609776789953" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1608456622476">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1608456622476" />
     <state x="2133" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606663225857" />
-    <state x="2270" y="135" key="Vcs.Push.Dialog.v2" timestamp="1606752895192">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="233" y="88" key="Vcs.Push.Dialog.v2" timestamp="1609671249389">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="88" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1606127100380" />
     <state x="2270" y="135" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606752895192" />
+    <state x="233" y="88" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609671249389" />
     <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1605122320532" />
-    <state x="2577" y="136" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609079949986">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="438" y="89" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609671120164">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="438" y="89" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1606126967746" />
     <state x="2577" y="136" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609079949986" />
-    <state x="438" y="89" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1280.680@0.0.1280.680" timestamp="1607974304245" />
+    <state x="438" y="89" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1280.680@0.0.1280.680" timestamp="1609671120164" />
     <state x="438" y="94" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1605121657211" />
-    <state x="0" y="0" width="598" height="680" key="find.popup" timestamp="1609508384299">
+    <state x="0" y="0" width="598" height="680" key="find.popup" timestamp="1609764617060">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="598" height="680" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1606582997666" />
     <state x="1920" y="0" width="881" height="1040" key="find.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609078272213" />
-    <state x="0" y="0" width="598" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1609508384299" />
-    <state x="2366" y="231" key="run.anything.popup" timestamp="1606742930298">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="0" y="0" width="598" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1609764617060" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1609766770920">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1605299820870" />
     <state x="2366" y="231" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606742930298" />
-    <state x="303" y="39" width="672" height="642" key="search.everywhere.popup" timestamp="1609670189109">
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1609766770920" />
+    <state x="303" y="39" width="672" height="642" key="search.everywhere.popup" timestamp="1609764582977">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="39" width="672" height="641" key="search.everywhere.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1606583377613" />
     <state x="2375" y="60" width="1008" height="981" key="search.everywhere.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609081221060" />
-    <state x="303" y="39" width="672" height="642" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1609670189109" />
+    <state x="303" y="39" width="672" height="642" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1609764582977" />
     <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720/1920.0.1920.1080@0.0.1280.720" timestamp="1605110895844" />
   </component>
 </project>
