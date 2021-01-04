@@ -9,7 +9,7 @@ const routerIndex = require("./routing/index.router");
 const passport = require("passport");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(cors());
