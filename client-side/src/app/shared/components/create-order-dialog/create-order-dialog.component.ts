@@ -19,29 +19,32 @@ export class CreateOrderDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.newOrder.id_reward = this.data.reward._id;
-    this.newOrder.points = this.data.reward.points;
+    this.newOrder.id_reward = this.data?.reward?._id;
+    this.newOrder.points = this.data?.reward?.points;
   }
 
   getLibraryAddress(id: string): string {
+    console.log(id);
     let filteredItem = this.data.libraries.filter((x) => x._id === id);
     return (
-      filteredItem[0].street +
+      filteredItem[0]?.street +
       ' ' +
-      filteredItem[0].building_number +
+      filteredItem[0]?.building_number +
       '/' +
-      filteredItem[0].apartment_number +
+      filteredItem[0]?.apartment_number +
       ' ' +
-      filteredItem[0].city
+      filteredItem[0]?.city
     );
   }
 
   getLibraryName(id: string): string {
-    return this.data.libraries.filter((x) => x._id === id)[0].name;
+    console.log(id);
+    return this.data.libraries.filter((x) => x._id === id)[0]?.name;
   }
 
   getLibraryTelephone(id: string): string {
-    return this.data.libraries.filter((x) => x._id === id)[0].telephone;
+    console.log(id);
+    return this.data.libraries.filter((x) => x._id === id)[0]?.telephone;
   }
 
   close(): void {

@@ -29,7 +29,7 @@ export class OrdersDialogComponent {
   }
 
   getRewardName(id: string): string {
-    return this.data.rewards.filter((x) => x._id === id)[0].name;
+    return this.data?.rewards.filter((x) => x._id === id)[0]?.name;
   }
 }
 

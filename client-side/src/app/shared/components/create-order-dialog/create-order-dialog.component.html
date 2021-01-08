@@ -30,14 +30,14 @@
         [(ngModel)]="newOrder.dateOfPickup"
         required
       />
-      <mat-error *ngIf="!newOrder.dateOfPickup">Date is required</mat-error>
+      <mat-error *ngIf="!newOrder?.dateOfPickup">Date is required</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Choose a library</mat-label>
       <mat-select [(ngModel)]="newOrder.id_library">
         <ng-container *ngFor="let lib of data.reward.libraries">
-          <mat-option value="{{ lib }}">{{
-            getLibraryName(lib.id_library)
+          <mat-option value="{{ lib.id_library }}">{{
+            getLibraryName(lib?.id_library)
           }}</mat-option>
         </ng-container>
       </mat-select>

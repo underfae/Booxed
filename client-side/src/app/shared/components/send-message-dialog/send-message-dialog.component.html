@@ -14,8 +14,9 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button (click)="close()">Cancel</button>
+  <button id="cancel" mat-button (click)="close()">Cancel</button>
   <button
+    id="submit"
     mat-raised-button
     color="accent"
     [disabled]="!text || !subject"

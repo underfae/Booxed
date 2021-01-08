@@ -1,40 +1,40 @@
 <h2 mat-dialog-title>YOUR ORDERS</h2>
 <mat-dialog-content class="mat-typography">
-  <div *ngIf="data.orders.length !== 0">
-    <div *ngFor="let el of data.orders">
+  <div *ngIf="data?.orders?.length !== 0">
+    <div *ngFor="let el of data?.orders">
       <mat-accordion>
         <mat-expansion-panel hideToggle>
           <mat-expansion-panel-header>
             <div class="content">
               <app-readonly-field
-                content="{{ getRewardName(el.id_reward) }}"
+                content="{{ getRewardName(el?.id_reward) }}"
                 label="Reward"
               ></app-readonly-field>
               <app-readonly-field
-                content="{{ el.dateOfPickup | date: 'shortDate' }}"
+                content="{{ el?.dateOfPickup | date: 'shortDate' }}"
                 label="Date of pickup"
               ></app-readonly-field>
               <app-readonly-field
-                content="{{ el.status }}"
+                content="{{ el?.status }}"
                 label="Status"
               ></app-readonly-field>
             </div>
           </mat-expansion-panel-header>
           <div class="additional-content">
             <app-readonly-field
-              content="{{ el.name }}"
+              content="{{ el?.name }}"
               label="Name"
             ></app-readonly-field>
             <app-readonly-field
-              content="{{ el.surname }}"
+              content="{{ el?.surname }}"
               label="Surname"
             ></app-readonly-field>
             <app-readonly-field
-              content="{{ getLibraryName(el.id_library) }}"
+              content="{{ getLibraryName(el?.id_library) }}"
               label="Library"
             ></app-readonly-field>
             <app-readonly-field
-              content="{{ getLibraryAddress(el.id_library) }}"
+              content="{{ getLibraryAddress(el?.id_library) }}"
               label="Address"
             ></app-readonly-field>
           </div>
@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <ng-container *ngIf="data.orders.length === 0">
+  <ng-container *ngIf="data?.orders?.length === 0">
     <app-no-items-found text="You don't have any orders yet :(">
     </app-no-items-found>
   </ng-container>
